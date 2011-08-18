@@ -16,9 +16,13 @@ Game = Ember.Object.extend({
         var jsonData = JSON.stringify(this.get("game"));
         $.ajax({
             type: 'GET',
-            url: '/pick-team/' + this.game.id + "/" + this.competitionWeek + "/" + this.userPick
+            url: '/pick-team/' + this.game.id + "/" + this.matchWeek + "/" + this.userPick
         });
-    }.observes('userPick')
+    }.observes('userPick'),
+    bind: function(to, from){
+        this._super(to, from);
+
+    }
 });
 
 App.game = Game.create(data);
@@ -51,4 +55,9 @@ Ember.RadioButton = Ember.View.extend({
         Ember.set(this, 'value', input.attr('value'));
     }
 });
+
+Handlebars.registerHelper('formatDate', function(property) {
+    return new Date(Ember.getPath(this, property)).toString('dddd, MMMM d');
+});
+
 view.appendTo("#game");

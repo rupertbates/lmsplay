@@ -6,6 +6,7 @@
 <script type="text/javascript">
     var data =@Html(game);
 </script>
+<script src="/assets/javascripts/date.js"></script>
 <script src="/assets/javascripts/ember/jquery-1.7.2.min.js"></script>
 <script src="/assets/javascripts/ember/ember-0.9.8.1.js"></script>
 <script src="/assets/javascripts/ember/lms-view-game.js"></script>
@@ -26,7 +27,7 @@
             <ul >
                 {{#each model.nextWeeksMatches}}
                 <li>
-                    {{day}}
+                    {{formatDate day}}
                     <ul id="match-list">
 
                     {{#each matches}}
@@ -41,7 +42,7 @@
             </ul>
         </div>
         <div id="your-picks">
-            <h3>Your picks:</h3>
+            <h3>Your previous picks:</h3>
             {{#each model.game.picks}}
             <li>
                 {{team}}

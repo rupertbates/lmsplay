@@ -5,21 +5,22 @@ import repositories.{MatchRepository}
 import services.MatchService
 import play.api.mvc.{AnyContent, Action, Controller}
 import models.Match
+import admin.ImportMatches
 
 object MatchController extends Controller {
   def matches: Action[AnyContent] = {
-    val matches = MatchRepository.find(null).toList
+    val matches = MatchService.getMatchWeeks
     Action {
       Ok(views.html.matches(matches))
     }
   }
   def listMatches = Action{
-      val matches = MatchRepository.find(null).toList
-      matches.foreach(m => MatchRepository.save(m))
+      val matches = ImportMatches.loadGames() // MatchRepository.find(null).toList
+      //matches.foreach(m => MatchRepository.save(m))
       Ok(Json.generate(matches))
   }
-  def listWeeksMatches(competitionWeek : Int) = Action{
-    val matches = MatchService.getMatches(competitionWeek)
+  def listWeeksMatches(MatchWeek : Int) = Action{
+    val matches = MatchService.getMatches(MatchWeek)
     Ok(Json.generate(matches))
   }
 }

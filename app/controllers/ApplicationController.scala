@@ -6,6 +6,7 @@ import play.api.Play.current
 import repositories.MatchRepository
 import helpers.Facebook
 import services.UserService
+import admin.ImportMatches
 
 object ApplicationController extends Controller {
 
@@ -15,6 +16,11 @@ object ApplicationController extends Controller {
         case None => Ok(views.html.index("Hello"))
         case Some(user) => Ok(views.html.loggedInHome(user))
       }
+  }
+
+  def importMatches = Action {
+    ImportMatches.importMatches()
+    Redirect(routes.MatchController.matches())
   }
 
   def facebookAuthCallback = Action {

@@ -1,4 +1,4 @@
-import helpers.CompetitionWeekHelper
+import helpers.MatchWeekHelper
 import org.joda.time.DateTime
 import org.specs2.mutable._
 import services.MatchService
@@ -8,7 +8,7 @@ class TestDates extends Specification {
 //  "This game round" should {
 //    "start 2 days ago" in {
 //      val today = new DateTime(2012, 06, 16, 0, 0)
-//      val roundStart = CompetitionWeekHelper.getCompetitionWeek() MatchService.getRoundStart(today)
+//      val roundStart = MatchWeekHelper.getMatchWeek() MatchService.getRoundStart(today)
 //      roundStart.getDayOfMonth mustEqual 14
 //    }
 //    "start the previous Thursday when it is Wednesday" in {
@@ -24,8 +24,8 @@ class TestDates extends Specification {
 //  }
   "We" should{
     "be able to work out what game round it is from a date" in{
-      CompetitionWeekHelper.getCompetitionWeek(new DateTime(2011, 8, 14, 0, 0)) mustEqual 1
-      CompetitionWeekHelper.getCompetitionWeek(new DateTime(2011, 9, 4, 0, 0)) mustEqual 4
+      MatchWeekHelper.getMatchWeek(new DateTime(2011, 8, 14, 0, 0)) mustEqual 1
+      MatchWeekHelper.getMatchWeek(new DateTime(2011, 9, 4, 0, 0)) mustEqual 4
     }
   }
   "DateTime" should{

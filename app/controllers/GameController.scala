@@ -3,29 +3,28 @@ package controllers
 import models.Game
 import play.api.data._
 import play.api.data.Forms._
-import repositories.GameRepository
 import play.api.mvc.Controller
 import com.codahale.jerkson.Json
 import services.{MatchService, GameService}
 import viewmodels.{UserGameModel, ViewGameModel}
-import helpers.CompetitionWeekHelper.getNextCompetitionWeek
+import helpers.MatchWeekHelper.getNextMatchWeek
 import play.api.Logger
-import helpers.CompetitionWeekHelper
+import helpers.MatchWeekHelper
 
 object GameController extends Controller with Secured {
 
   object HtmlRoutes {
     def viewGame(id: String) = IsAuthenticated {
       username => _ =>
-        Logger.debug("Now = " + CompetitionWeekHelper.now)
-        val game = GameService.getGame(id, username)
+        Logger.debug("Now = " + MatchWeekHelper.now)
+        val game = GameService.getGameContainingUser(id, username)
         game match {
           case None => NotFound
           case Some(g) => {
             val nextWeeksMatches = MatchService.getNextWeeksMatchesByDay
             val thisWeeksMatches = MatchService.getThisWeeksMatches
-            val userPick = g.getUserPick(getNextCompetitionWeek, username)
-            val model = new ViewGameModel(new UserGameModel(g, username), getNextCompetitionWeek, nextWeeksMatches, userPick)
+            val userPick = g.getUserPick(getNextMatchWeek, username)
+            val model = new ViewGameModel(new UserGameModel(g, username), getNextMatchWeek, nextWeeksMatches, userPick)
             Ok(views.html.gameEmber(Json.generate(model)))
           }
         }
@@ -33,7 +32,7 @@ object GameController extends Controller with Secured {
 
     def index = IsAuthenticated {
       username => _ =>
-        Ok(views.html.games(username, Json.generate(GameRepository.findGamesByUser(username))))
+        Ok(views.html.games(username, Json.generate(GameService.findGamesByUser(username))))
     }
 
     def newGame = IsAuthenticated {
@@ -56,7 +55,7 @@ object GameController extends Controller with Secured {
   object JsonRoutes {
     def listGames = IsAuthenticated {
       username => _ =>
-        Ok(Json.generate(GameRepository.findGamesByUser(username)))
+        Ok(Json.generate(GameService.findGamesByUser(username)))
     }
 
     def createGame = IsAuthenticated {
@@ -71,36 +70,34 @@ object GameController extends Controller with Secured {
         implicit request => {
           val json = request.body.asJson.get.toString()
           val game = Json.parse[Game](json)
-          GameRepository.save(game)
+          GameService.saveGame(game, username)
           Ok(Json.generate(game))
         }
     }
 
-    def pickTeam(id: String, competitionWeek: Int, team: String) = IsAuthenticated {
+    def pickTeam(id: String, MatchWeek: Int, team: String) = IsAuthenticated {
       username =>
         implicit request => {
 
-          if (GameService.pickTeam(id, competitionWeek, username, team)) {
+          if (GameService.pickTeam(id, MatchWeek, username, team)) {
             Ok("Game updated successfully")
           }else{
-            if(CompetitionWeekHelper.weekIsEditable(competitionWeek))
-              BadRequest("Couldn't update the game")
+            if(MatchWeekHelper.matchesHaveStarted(MatchWeek))
+              BadRequest("Couldn't update the game, matches have already started")
             else
-              BadRequest("Can't update the user selection for this week as games have already started")
+              BadRequest("Couldn't update the game")
           }
-
-
         }
     }
 
     def getGame(id: String) = IsAuthenticated {
       username => implicit request =>
-        Ok(Json.generate(GameRepository.findOneById(id)))
+        Ok(Json.generate(GameService.getGameContainingUser(id, username).getOrElse("Game not found or User is not in this game")))
     }
 
     def deleteGame(id: String) = IsAuthenticated {
       username => implicit request =>
-        GameRepository.removeById(id)
+        GameService.deleteGame(id, username)
         Ok("success")
     }
   }

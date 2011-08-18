@@ -1,3 +1,3 @@
 package models
 
-case class GameRound(competitionWeek : Int, var userPicks : List[UserPick])
+case class GameRound(matchWeek : Int, var userPicks : List[UserPick])

@@ -1,4 +1,4 @@
-@(matches: List[Match])
+@(weeks: List[MatchWeek])
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -7,11 +7,24 @@
 </head>
 <body>
 <ul>
-        @matches.map { fmatch =>
-        <li>
-            @fmatch.kickOffTime @fmatch.homeTeam.name vs @fmatch.awayTeam.name
-        </li>
-        }
+    @weeks.map { week =>
+    <li>
+        Week: @week.number <b>Start date:</b> @week.startDate.toString("EEEE, MMMM dd - HH:mm:ss") <b>End date:</b> @week.endDate.toString("EEEE, MMMM dd - HH:mm:ss")
+        <ul>
+            @week.matchDays.map { day =>
+            <li>@day.day.toString("EEEE, MMMM dd")
+                <ul>
+                    @day.matches.map { fmatch =>
+                    <li>
+                        @fmatch.kickOffTime.toString("EEEE, MMMM dd - HH:mm:ss") @fmatch.homeTeam.name vs @fmatch.awayTeam.name
+                    </li>
+                    }
+                </ul>
+            </li>
+            }
+        </ul>
+    </li>
+    }
 </ul>
 
 </body>
