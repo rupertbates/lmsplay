@@ -5,6 +5,8 @@ import org.joda.time.{DateTimeConstants, DateTime}
 import com.mongodb.casbah.commons.MongoDBObject
 import helpers.MatchWeekHelper.getCurrentMatchWeek
 import models.{MatchWeek, Match, MatchDay}
+import com.mongodb.casbah.Imports._
+import helpers.MatchWeekHelper
 
 object MatchService {
 
@@ -21,6 +23,10 @@ object MatchService {
   def getMatches(matchWeek: Int) = {
     if (matchWeek == 0) MatchRepository.find(null).toList
     else MatchRepository.find(MongoDBObject("matchWeek" -> matchWeek)).toList
+  }
+  def getMatchWeek = {
+    val q = ("startDate" $lte MatchWeekHelper.now) ++ ("endDate" $gte MatchWeekHelper.now)
+    MatchWeekRepository.findOne(q)
   }
 
   def getMatchDays(matchWeek: Int = 0) =

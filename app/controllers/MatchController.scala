@@ -20,7 +20,7 @@ object MatchController extends Controller {
       Ok(Json.generate(matches))
   }
   def listWeeksMatches(MatchWeek : Int) = Action{
-    val matches = MatchService.getMatches(MatchWeek)
-    Ok(Json.generate(matches))
+    val matchWeek = MatchService.getMatchWeek
+    Ok(Json.generate(matchWeek))
   }
 }

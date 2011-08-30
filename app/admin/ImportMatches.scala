@@ -13,23 +13,7 @@ import collection.mutable.ListBuffer
 
 object ImportMatches {
 
-  def createMatchWeeks(matches: List[Match]) = {
-    //val weirdMatch = MatchRepository.findOne(MongoDBObject("kickOffTime" -> "ISODate(2012-01-11T19:45:00.000Z)"))
 
-    val matchWeeks = matches
-      .groupBy(m => m.matchWeek)
-      .map(args => new MatchWeek(args._1, args._2(0).kickOffTime, args._2(0).kickOffTime, MatchService.groupMatchesByDay(args._2)))
-      .toList
-      .sortBy(_.number)
-
-    var last = matchWeeks.head
-
-    matchWeeks.tail.foreach(mw => {
-        last.endDate = mw.startDate.minusMinutes(5)
-        last = mw
-      })
-    matchWeeks
-  }
 
 //  def getMatchWeeks = {
 //    MatchRepository.find(null)
@@ -61,6 +45,9 @@ object ImportMatches {
     val months = node.get("months")
     var matchBuffer = new ListBuffer[Match]
     var i = 0
+    var startDate = MatchWeekHelper.startDate
+    var weekNum = 1
+
     while (i < months.size()) {
       //Console.out.print(months.get(i).get("startDate"))
       val days = months.get(i).get("days")
@@ -71,10 +58,15 @@ object ImportMatches {
         var k = 0
         while (k < matches.size()) {
           val gameNode = matches.get(k)
+
           val home = new Team(gameNode.get("homeTeam").findValue("name").asText(), gameNode.get("homeTeam").get("score").asInt(0))
           val away = new Team(gameNode.get("awayTeam").findValue("name").asText(), gameNode.get("awayTeam").get("score").asInt(0))
           val date = new DateTime(gameNode.get("dateTime").asText())
-          matchBuffer += new Match(MatchWeekHelper.getMatchWeek(date), date, home, away)
+          if (date.isAfter(startDate.plusWeeks(1))){
+            startDate = date
+            weekNum = weekNum + 1
+          }
+          matchBuffer += new Match(weekNum, date, home, away)
           k = k + 1
         }
         j = j + 1
@@ -82,6 +74,24 @@ object ImportMatches {
       i = i + 1
     }
     createMatchWeeks(matchBuffer.toList)
+  }
+
+  def createMatchWeeks(matches: List[Match]) = {
+    //val weirdMatch = MatchRepository.findOne(MongoDBObject("kickOffTime" -> "ISODate(2012-01-11T19:45:00.000Z)"))
+
+    val matchWeeks = matches
+      .groupBy(m => m.matchWeek)
+      .map(args => new MatchWeek(args._1, args._2(0).kickOffTime, args._2(0).kickOffTime, MatchService.groupMatchesByDay(args._2)))
+      .toList
+      .sortBy(_.number)
+
+    var last = matchWeeks.head
+
+    matchWeeks.tail.foreach(mw => {
+      last.endDate = mw.startDate.minusMinutes(5)
+      last = mw
+    })
+    matchWeeks
   }
 
 

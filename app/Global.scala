@@ -1,6 +1,6 @@
 import admin.ImportMatches
 import play.api._
-import repositories.MatchRepository
+import repositories.{MatchWeekRepository, MatchRepository}
 import com.mongodb.casbah.commons.conversions.scala._
 
 object Global extends GlobalSettings {
@@ -12,7 +12,7 @@ object Global extends GlobalSettings {
 
     RegisterConversionHelpers()
 
-    if(MatchRepository.count() == 0){
+    if(MatchWeekRepository.count() == 0){
       Logger.debug("No matches in the db, importing them now")
       ImportMatches.importMatches()
       Logger.debug("Finished importing matches")
