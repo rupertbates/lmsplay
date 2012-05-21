@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="org.fluentlenium_fluentlenium-festassert_0.5.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.fluentlenium/fluentlenium-festassert/jars/fluentlenium-festassert-0.5.6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.fluentlenium/fluentlenium-festassert/docs/fluentlenium-festassert-0.5.6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.fluentlenium/fluentlenium-festassert/srcs/fluentlenium-festassert-0.5.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

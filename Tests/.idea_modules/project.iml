@@ -1,0 +1,67 @@
+<module version="4" type="JAVA_MODULE">
+  <component name="NewModuleRootManager">
+    <output url="file://D:\Projects\lmsplay\Tests\project\target\scala_2.9.1"></output>
+    <output-test url="file://D:\Projects\lmsplay\Tests\project\target\scala_2.9.1"></output-test>
+    <exclude-output></exclude-output>
+    <content url="file://D:\Projects\lmsplay\Tests\project">
+      <sourceFolder url="file://D:\Projects\lmsplay\Tests\project" isTestSource="false"></sourceFolder>
+      <sourceFolder url="file://D:\Projects\lmsplay\Tests\project/plugins" isTestSource="false"></sourceFolder>
+      <excludeFolder url="file://D:\Projects\lmsplay\Tests\project/boot"></excludeFolder>
+      <excludeFolder url="file://D:\Projects\lmsplay\Tests\project/target"></excludeFolder>
+      <excludeFolder url="file://D:\Projects\lmsplay\Tests\project/plugins/target"></excludeFolder>
+      <excludeFolder url="file://D:\Projects\lmsplay\Tests\project/plugins/project/target"></excludeFolder>
+    </content>
+    <orderEntry type="inheritedJdk"></orderEntry>
+    <orderEntry type="sourceFolder" forTests="false"></orderEntry>
+    <orderEntry type="module-library">
+      <library name="sbt-and-plugins">
+        <CLASSES>
+          <root url="file://D:\Projects\lmsplay\Tests\project\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1"></root>
+          <root url="jar://D:\Projects\lmsplay\Tests\project\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1/xsbti/interface-0.11.1.jar!/"></root>
+          <root url="file://C:\Users\Rupert\.sbt\plugins\target\scala-2.9.1\sbt-0.11.1\classes"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\logging_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\actions_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.ivy2\cache\commons-io\commons-io\jars\commons-io-2.0.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\task-system_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\commons-httpclient-3.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\io_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\incremental-compiler_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\jline-0.9.94.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\cache_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\tracking_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\commons-logging-1.0.4.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\commons-codec-1.2.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\ivy_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\xsbti\interface-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\main_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\completion_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\control_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\process_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\launcher-interface_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\lib\jansi.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\lib\scala-compiler.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\sbt_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\jsch-0.1.31.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\collections_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\run_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\testing_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.ivy2\cache\scala_2.9.1\sbt_0.11.1\com.github.mpeltonen\sbt-idea\jars\sbt-idea-0.11.0.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\persist_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\tasks_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\test-interface-0.5.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\lib\scala-library.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\ivy-2.2.0.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\compile_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\classpath_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\lib\jline.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\sbinary_2.9.0-0.4.0.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\api_2.9.1-0.11.1.jar!/"></root>
+          <root url="jar://C:\Users\Rupert\.sbt\boot\scala-2.9.1\org.scala-tools.sbt\sbt\0.11.1\classfile_2.9.1-0.11.1.jar!/"></root>
+        </CLASSES>
+        <JAVADOC> </JAVADOC>
+        <SOURCES> </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry level="project" name="scala-2.9.1" type="library"></orderEntry>
+  </component>
+</module>

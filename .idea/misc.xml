@@ -1,0 +1,56 @@
+<project version="4">
+  <component name="CopyrightManager" default="">
+    <module2copyright></module2copyright>
+  </component>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY"></option>
+    <option name="OPTION_SCOPE" value="protected"></option>
+    <option name="OPTION_HIERARCHY" value="true"></option>
+    <option name="OPTION_NAVIGATOR" value="true"></option>
+    <option name="OPTION_INDEX" value="true"></option>
+    <option name="OPTION_SEPARATE_INDEX" value="true"></option>
+    <option name="OPTION_DOCUMENT_TAG_USE" value="false"></option>
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="false"></option>
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="false"></option>
+    <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="true"></option>
+    <option name="OPTION_DEPRECATED_LIST" value="true"></option>
+    <option name="OTHER_OPTIONS" value=""></option>
+    <option name="HEAP_SIZE"></option>
+    <option name="LOCALE"></option>
+    <option name="OPEN_IN_BROWSER" value="true"></option>
+  </component>
+  <component name="ModuleEditorState">
+    <option name="LAST_EDITED_MODULE_NAME"></option>
+    <option name="LAST_EDITED_TAB_NAME"></option>
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state></profile-state>
+    </entry>
+  </component>
+  <component name="ProjectResources">
+    <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
+  </component>
+  <component 
+  name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="Android 2.2 Platform" project-jdk-type="Android SDK">
+    <output url="file://$PROJECT_DIR$/out"></output>
+</component>
+  <component name="SvnConfiguration" maxAnnotateRevisions="500">
+    <option name="USER" value=""></option>
+    <option name="PASSWORD" value=""></option>
+    <option name="mySSHConnectionTimeout" value="30000"></option>
+    <option name="mySSHReadTimeout" value="30000"></option>
+    <option name="LAST_MERGED_REVISION"></option>
+    <option name="MERGE_DRY_RUN" value="false"></option>
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true"></option>
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false"></option>
+    <option name="IGNORE_SPACES_IN_MERGE" value="false"></option>
+    <option name="DETECT_NESTED_COPIES" value="true"></option>
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false"></option>
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true"></option>
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true"></option>
+    <option name="FORCE_UPDATE" value="false"></option>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="WebServicesPlugin" addRequiredLibraries="true"></component>
+</project>

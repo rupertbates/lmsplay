@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="org.seleniumhq.selenium_selenium-remote-driver_2.16.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.seleniumhq.selenium/selenium-remote-driver/jars/selenium-remote-driver-2.16.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.seleniumhq.selenium/selenium-remote-driver/docs/selenium-remote-driver-2.16.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.seleniumhq.selenium/selenium-remote-driver/srcs/selenium-remote-driver-2.16.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
