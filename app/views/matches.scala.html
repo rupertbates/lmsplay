@@ -1,4 +1,4 @@
-@(games: List[Game])
+@(matches: List[Match])
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -7,9 +7,11 @@
 </head>
 <body>
 <ul>
-    #{list games, as:'game'}
-    <li>${product}</li>
-    #{/list}
+        @matches.map { fmatch =>
+        <li>
+            @fmatch.kickOffTime @fmatch.homeTeam.name vs @fmatch.awayTeam.name
+        </li>
+        }
 </ul>
 
 </body>

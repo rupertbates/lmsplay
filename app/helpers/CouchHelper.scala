@@ -6,7 +6,7 @@ import com.fasterxml.jackson.module.scala
 
 import org.apache.http.{HttpEntity, HttpResponse}
 import java.io.InputStream
-import models.Game
+import models.Match
 import org.codehaus.jackson.`type`.TypeReference
 import org.apache.http.impl.client.DefaultHttpClient
 import org.apache.http.client.methods.HttpGet
@@ -16,7 +16,7 @@ import play.api.db
 import scala.{DefaultScalaModule, CaseClassModule, OptionModule}
 
 object CouchHelper {
-  def getGames () :  List[Game] = {
+  def getGames () :  List[Match] = {
     val httpClient = new DefaultHttpClient()
     
     val httpGet = new HttpGet("http://localhost:5984/lms/_design/allMatches/_view/allMatches")
@@ -34,7 +34,7 @@ object CouchHelper {
     om.registerModule(DefaultScalaModule)
     //node = om.readTree(entityStream)
 
-    val data = om.readValue(entityStream, new TypeReference[ArrayList[Game]]() {})
+    val data = om.readValue(entityStream, new TypeReference[ArrayList[Match]]() {})
     httpClient.getConnectionManager().shutdown();
     return data
   }

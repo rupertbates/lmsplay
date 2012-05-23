@@ -33,6 +33,7 @@
     <orderEntry type="library" name="com.github.jsuereth.scala-arm_scala-arm_2.9.1_0.3" level="project" />
     <orderEntry type="library" name="play_anorm_2.9.1_2.0" level="project" />
     <orderEntry type="library" name="io.netty_netty_3.3.0.Final" level="project" />
+    <orderEntry type="library" name="org.slf4j_slf4j-api_1.6.4" level="project" />
     <orderEntry type="library" name="org.slf4j_jul-to-slf4j_1.6.4" level="project" />
     <orderEntry type="library" name="org.slf4j_jcl-over-slf4j_1.6.4" level="project" />
     <orderEntry type="library" name="ch.qos.logback_logback-core_1.0.0" level="project" />
@@ -49,7 +50,6 @@
     <orderEntry type="library" name="org.yaml_snakeyaml_1.9" level="project" />
     <orderEntry type="library" name="org.hibernate_hibernate-validator_4.2.0.Final" level="project" />
     <orderEntry type="library" name="javax.validation_validation-api_1.0.0.GA" level="project" />
-    <orderEntry type="library" name="org.slf4j_slf4j-api_1.6.1" level="project" />
     <orderEntry type="library" name="org.springframework_spring-context_3.0.7.RELEASE" level="project" />
     <orderEntry type="library" name="org.springframework_spring-core_3.0.7.RELEASE" level="project" />
     <orderEntry type="library" name="org.springframework_spring-beans_3.0.7.RELEASE" level="project" />
@@ -82,6 +82,18 @@
     <orderEntry type="library" name="org.ektorp_org.ektorp_1.2.1" level="project" />
     <orderEntry type="library" name="org.apache.httpcomponents_httpclient-cache_4.1.1" level="project" />
     <orderEntry type="library" name="commons-io_commons-io_2.0.1" level="project" />
+    <orderEntry type="library" name="com.mongodb.casbah_casbah-query_2.9.1_2.1.5-1" level="project" />
+    <orderEntry type="library" name="com.mongodb.casbah_casbah-commons_2.9.1_2.1.5-1" level="project" />
+    <orderEntry type="library" name="org.scala-tools.time_time_2.9.1_0.5" level="project" />
+    <orderEntry type="library" name="org.scalaj_scalaj-collection_2.9.1_1.2" level="project" />
+    <orderEntry type="library" name="com.mongodb.casbah_casbah-core_2.9.1_2.1.5-1" level="project" />
+    <orderEntry type="library" name="com.mongodb.casbah_casbah-gridfs_2.9.1_2.1.5-1" level="project" />
+    <orderEntry type="library" name="com.novus_salat-core_2.9.1_0.0.8-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="com.novus_salat-util_2.9.1_0.0.8-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="org.scala-lang_scalap_2.9.1" level="project" />
+    <orderEntry type="library" name="org.scala-lang_scala-compiler_2.9.1" level="project" />
+    <orderEntry type="library" name="org.mongodb_mongo-java-driver_2.7.3" level="project" />
+    <orderEntry type="library" name="net.liftweb_lift-json_2.9.1_2.4" level="project" />
     <orderEntry type="library" scope="TEST" name="play_play-test_2.9.1_2.0" level="project" />
     <orderEntry type="library" scope="TEST" name="org.specs2_specs2_2.9.1_1.7.1" level="project" />
     <orderEntry type="library" scope="TEST" name="org.specs2_specs2-scalaz-core_2.9.1_6.0.1" level="project" />
