@@ -13,6 +13,7 @@ import org.apache.http.client.methods.HttpGet
 import java.util.{ArrayList, UUID}
 import org.apache.http.client.HttpClient
 import play.api.db
+
 import scala.{DefaultScalaModule, CaseClassModule, OptionModule}
 
 object CouchHelper {

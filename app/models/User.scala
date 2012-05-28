@@ -1,6 +1,6 @@
 package models
 
-case class User(email: String, name: String, password: String){
+case class User(id: String, name : String, gender : String, email: String, password: String){
 }
 object User {
   /**
