@@ -1,6 +1,8 @@
 package models
 
-case class User(id: String, name : String, gender : String, email: String, password: String){
+import org.codehaus.jackson.annotate.JsonIgnore
+
+case class User(id: String, name : String, gender : String, email: String,@JsonIgnore password: String){
 }
 object User {
   /**

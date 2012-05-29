@@ -7,6 +7,7 @@ import libs.ws.WS
 import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
+import play.api.libs.concurrent._
 import com.codahale.jerkson.Json._
 import models._
 import views._
@@ -45,8 +46,13 @@ object Application extends Controller {
 
   def facebookAuthCallback = Action {
     request =>
-      Async {
-        val url = Facebook.AccessTokenBaseUrl + request.queryString("code")(0)
+      //Async {
+        val code = request.queryString("code")(0)
+        val user = Facebook.getUser(code)
+        Ok(user.name)
+        /*val url = Facebook.AccessTokenBaseUrl + code
+        val access = WS.url(url).get
+        val reponse = access.await(5000).get
         WS.url(url).get().flatMap(response => {
           val accessToken = Facebook.parseAccessTokenResponse(response.body)
           WS.url(Facebook.UserDetailsBaseUrl + accessToken._1).get().map(response2 => {
@@ -61,8 +67,8 @@ object Application extends Controller {
             }
           })
         }
-        )
-      }
+        )*/
+      //}
   }
 
 
