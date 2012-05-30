@@ -8,3 +8,5 @@ tmp
 #.idea_modules
 out
 .idea/
+.DS_Store
+RUNNING_PID

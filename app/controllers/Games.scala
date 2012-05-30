@@ -5,7 +5,7 @@ import models.{User}
 
 object Games extends Controller with Secured{
   def index = IsAuthenticated { username => _ =>
-    Ok(views.html.games(username))
+    Ok(views.html.games("games page " + username))
   }
 
 }
