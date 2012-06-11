@@ -13,6 +13,7 @@ object ApplicationBuild extends Build {
 
   val appDependencies = Seq(
     // Add your project dependencies here,
+    "joda-time" % "joda-time" % "1.6",
     "org.codehaus.jackson" % "jackson-core-asl" % "1.9.2",
     "org.codehaus.jackson" % "jackson-mapper-asl" % "1.9.2",
     "com.fasterxml" % "jackson-module-scala" % "1.9.1",

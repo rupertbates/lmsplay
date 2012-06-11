@@ -3,17 +3,17 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
-GET     /matches                  controllers.Application.matches
+GET     /                           controllers.ApplicationController.index
+GET     /matches                  controllers.ApplicationController.matches
 
 # Authentication
-GET     /callback                           controllers.Application.facebookAuthCallback
-#GET     /login                              controllers.Application.login
-#POST    /login                              controllers.Application.authenticate
-GET     /logout                             controllers.Application.logout
+GET     /callback                           controllers.ApplicationController.facebookAuthCallback
+#GET     /login                              controllers.ApplicationController.login
+#POST    /login                              controllers.ApplicationController.authenticate
+GET     /logout                             controllers.ApplicationController.logout
 
 #logged in user
-GET     /games                    controllers.Games.index
+GET     /games                    controllers.GamesController.index
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

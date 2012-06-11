@@ -20,19 +20,27 @@ object Facebook {
     (first, second)
   }
 
-  def getUser(code: String): User = {
+  def requestAccessToken(code: String) : String = {
+    //First get an access token
     val url = AccessTokenBaseUrl + code
     Logger.debug("url = " + url)
     val accessTokenRequest = WS.url(url).get()
-    Logger.debug("created url get")
     val response = accessTokenRequest.await(8000).get
     Logger.debug("got response " + response.body)
-    val accessToken = parseAccessTokenResponse(response.body)._1
+    parseAccessTokenResponse(response.body)._1
+  }
+
+  def getUser(code: String): Option[User] = {
+
+    val accessToken = requestAccessToken(code)
+
+    //now request the user details
     Logger.debug("user details url = " + UserDetailsBaseUrl + accessToken)
     val userDetailsRequest = WS.url(UserDetailsBaseUrl + accessToken).get()
     val userResponse = userDetailsRequest.await(8000).get
     Logger.debug(userResponse.body)
     val user = parse[User](userResponse.body)
-    user
+
+    Option(user)
   }
 }
