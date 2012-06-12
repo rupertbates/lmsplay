@@ -5,6 +5,7 @@ import play.api.libs.ws.WS
 import models.User
 import play.api.Logger
 import com.codahale.jerkson.Json.parse
+import com.codahale.jerkson.Json
 
 object Facebook {
   val app_id = "314167758604221"
@@ -40,6 +41,7 @@ object Facebook {
     val userResponse = userDetailsRequest.await(8000).get
     Logger.debug(userResponse.body)
     val user = parse[User](userResponse.body)
+
 
     Option(user)
   }

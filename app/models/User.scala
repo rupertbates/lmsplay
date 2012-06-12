@@ -1,7 +1,7 @@
 package models
 
 import org.codehaus.jackson.annotate.JsonIgnore
-import com.novus.salat.annotations.raw.Key
+import com.novus.salat.annotations.Key
 
 case class User(@Key("_id") id: Int,
                 name : String,

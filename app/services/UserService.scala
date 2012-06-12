@@ -18,6 +18,10 @@ object UserService {
     user
   }
 
+  def getUserData(username: String): Option[User] = {
+    UserRepository.findByUserName(username)
+  }
+
   def getUserData(user: User): Option[User] = {
     UserRepository.findOneById(user.id)
   }

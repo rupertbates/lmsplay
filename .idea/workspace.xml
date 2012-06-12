@@ -2,35 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f84dcf78-57b1-4ea9-be03-a4d8994745ad" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Global.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/Secured.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/repositories/GameRepository.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/services/GameService.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/newgame.scala.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/usergames.scala.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/games.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/lms.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/lms.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_codahale_jerkson_2_9_1_0_5_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_codahale_jerkson_2_9_1_0_5_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_code_findbugs_jsr305_1_3_9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_code_findbugs_jsr305_1_3_9.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_novocode_junit_interface_0_8.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_novocode_junit_interface_0_8.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_scala_tools_testing_test_interface_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_scala_tools_testing_test_interface_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_anorm_2_9_1_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_anorm_2_9_1_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_templates_2_9_1_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_templates_2_9_1_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/tyrex_tyrex_1_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/tyrex_tyrex_1_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/xalan_serializer_2_7_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/xalan_serializer_2_7_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/xerces_xercesImpl_2_9_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/xerces_xercesImpl_2_9_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea_modules/lmsplay.iml" afterPath="$PROJECT_DIR$/.idea_modules/lmsplay.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea_modules/project.iml" afterPath="$PROJECT_DIR$/.idea_modules/project.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ApplicationController.scala" afterPath="$PROJECT_DIR$/app/controllers/ApplicationController.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/GamesController.scala" afterPath="$PROJECT_DIR$/app/controllers/GamesController.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/Facebook.scala" afterPath="$PROJECT_DIR$/app/helpers/Facebook.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Game.scala" afterPath="$PROJECT_DIR$/app/models/Game.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Team.scala" afterPath="$PROJECT_DIR$/app/models/Team.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/User.scala" afterPath="$PROJECT_DIR$/app/models/User.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/repositories/GameRepository.scala" afterPath="$PROJECT_DIR$/app/repositories/GameRepository.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/repositories/UserRepository.scala" afterPath="$PROJECT_DIR$/app/repositories/UserRepository.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/GameService.scala" afterPath="$PROJECT_DIR$/app/services/GameService.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/UserService.scala" afterPath="$PROJECT_DIR$/app/services/UserService.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/games.scala.html" afterPath="$PROJECT_DIR$/app/views/games.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/lms.js" afterPath="$PROJECT_DIR$/public/javascripts/lms.js" />
     </list>
     <ignored path="lmsplay.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,7 +71,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/app/controllers/GamesController.scala" line="54" class="controllers.GamesController$" package="controllers">
+      <breakpoint url="file://$PROJECT_DIR$/app/controllers/GamesController.scala" line="56" class="controllers.GamesController$" package="controllers">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -114,7 +97,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/app/controllers/GamesController.scala" line="46" class="controllers.GamesController$" package="controllers">
+      <breakpoint url="file://$PROJECT_DIR$/app/controllers/GamesController.scala" line="36" class="controllers.GamesController$" package="controllers">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -171,7 +154,7 @@
       <file leaf-file-name="GamesController.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/GamesController.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="16" selection-start="1234" selection-end="1234" vertical-scroll-proportion="0.5958188">
+            <state line="36" column="82" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.44425088">
               <folding>
                 <element signature="e#21#53#0" expanded="true" />
               </folding>
@@ -179,11 +162,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/routes">
+      <file leaf-file-name="GameRepository.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/repositories/GameRepository.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="6" selection-start="658" selection-end="658" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="10" column="53" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#22#63#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -191,7 +176,7 @@
       <file leaf-file-name="GameService.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/services/GameService.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="21" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0">
+            <state line="10" column="36" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#18#36#0" expanded="true" />
               </folding>
@@ -199,48 +184,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserService.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/services/UserService.scala">
+      <file leaf-file-name="games.scala.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/games.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="28" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Facebook.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/helpers/Facebook.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="7" selection-start="120" selection-end="151" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Secured.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Secured.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="165" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#21#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lms.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/lms.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="13" selection-start="1897" selection-end="1897" vertical-scroll-proportion="-4.576923">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="games.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/games.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="25" selection-start="1228" selection-end="1228" vertical-scroll-proportion="-10.461538">
+            <state line="39" column="28" selection-start="825" selection-end="825" vertical-scroll-proportion="-11.769231">
               <folding />
             </state>
           </provider>
@@ -249,7 +196,18 @@
       <file leaf-file-name="lms.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/lms.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="41" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0">
+            <state line="25" column="98" selection-start="713" selection-end="713" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Invoker.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.ivy2/cache/play/play_2.9.1/srcs/play_2.9.1-2.0-sources.jar!/play/core/system/Invoker.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="71" column="0" selection-start="2037" selection-end="2037" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -258,8 +216,28 @@
       <file leaf-file-name="Game.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/Game.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="26" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
+            <state line="7" column="0" selection-start="139" selection-end="169" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Team.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Team.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="35" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/User.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="35" selection-start="136" selection-end="139" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#16#63#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -277,22 +255,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/services/UserService.scala" />
-        <option value="$PROJECT_DIR$/app/views/new-game.scala.html" />
-        <option value="$PROJECT_DIR$/target/scala-2.9.1/src_managed/main/views/html/newgame.template.scala" />
-        <option value="$PROJECT_DIR$/app/repositories/GameRepository.scala" />
-        <option value="$PROJECT_DIR$/app/GlobalSettings.scala" />
-        <option value="$PROJECT_DIR$/app/Global.scala" />
-        <option value="$PROJECT_DIR$/app/controllers/ApplicationController.scala" />
         <option value="$PROJECT_DIR$/app/views/newgame.scala.html" />
         <option value="$PROJECT_DIR$/app/controllers/Secured.scala" />
         <option value="$PROJECT_DIR$/public/games.html" />
         <option value="$PROJECT_DIR$/public/stylesheets/lms.css" />
-        <option value="$PROJECT_DIR$/app/models/Game.scala" />
-        <option value="$PROJECT_DIR$/app/controllers/GamesController.scala" />
-        <option value="$PROJECT_DIR$/app/services/GameService.scala" />
-        <option value="$PROJECT_DIR$/public/javascripts/lms.js" />
         <option value="$PROJECT_DIR$/conf/routes" />
+        <option value="$PROJECT_DIR$/app/services/UserService.scala" />
+        <option value="$PROJECT_DIR$/app/repositories/UserRepository.scala" />
+        <option value="$PROJECT_DIR$/app/helpers/Facebook.scala" />
+        <option value="$PROJECT_DIR$/app/repositories/GameRepository.scala" />
+        <option value="$PROJECT_DIR$/app/views/games.scala.html" />
+        <option value="$PROJECT_DIR$/app/models/Team.scala" />
+        <option value="$PROJECT_DIR$/app/models/User.scala" />
+        <option value="$PROJECT_DIR$/public/javascripts/lms.js" />
+        <option value="$PROJECT_DIR$/app/models/Game.scala" />
+        <option value="$PROJECT_DIR$/app/services/GameService.scala" />
+        <option value="$PROJECT_DIR$/app/controllers/GamesController.scala" />
       </list>
     </option>
   </component>
@@ -328,17 +306,16 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lmsplay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -400,14 +377,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scala-2.9.1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src_managed" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -476,6 +445,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lmsplay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lmsplay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lmsplay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lmsplay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config-classes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -613,6 +614,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lmsplay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -927,10 +938,10 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.TestJson" />
-      <item index="1" class="java.lang.String" itemvalue="Remote.Debug web app" />
-      <item index="2" class="java.lang.String" itemvalue="Scala Script.parseJson.scala" />
-      <item index="3" class="java.lang.String" itemvalue="Specs2.FacebookSpec::be able to retrieve an access token" />
-      <item index="4" class="java.lang.String" itemvalue="Specs2.FacebookSpec" />
+      <item index="1" class="java.lang.String" itemvalue="Scala Script.parseJson.scala" />
+      <item index="2" class="java.lang.String" itemvalue="Specs2.FacebookSpec::be able to retrieve an access token" />
+      <item index="3" class="java.lang.String" itemvalue="Specs2.FacebookSpec" />
+      <item index="4" class="java.lang.String" itemvalue="Remote.Debug web app" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -953,7 +964,6 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924107" sideWeight="0.49522293" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.49599144" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.32643312" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39620537" sideWeight="0.75835985" order="3" side_tool="false" content_ui="tabs" />
@@ -964,10 +974,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2008547" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19978632" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998884" sideWeight="0.71619457" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.49599144" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1026,123 +1037,138 @@
     <MESSAGE value="Save user to db" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/public/javascripts/lms.js</url>
+          <line>251</line>
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/target/scala-2.9.1/src_managed/main/views/html/newgame.template.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="77" selection-start="782" selection-end="782" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/newgame.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="55" selection-start="105" selection-end="105" vertical-scroll-proportion="-1.3076923">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/games.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/views/index.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/backbone.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Secured.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="165" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#21#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/Facebook.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="7" selection-start="120" selection-end="151" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/play/play_2.9.1/srcs/play_2.9.1-2.0-sources.jar!/play/core/system/Invoker.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="0" selection-start="2037" selection-end="2037" vertical-scroll-proportion="0.33268481">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/games.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="25" selection-start="1228" selection-end="1228" vertical-scroll-proportion="-10.461538">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/lms.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="13" selection-start="1897" selection-end="1897" vertical-scroll-proportion="-4.576923">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/services/UserService.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="28" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0" />
+        <state line="15" column="26" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Game.scala">
+    <entry file="file://$PROJECT_DIR$/app/helpers/Facebook.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="26" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
+        <state line="43" column="0" selection-start="1875" selection-end="1875" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#17#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/repositories/UserRepository.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="4" selection-start="357" selection-end="403" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Match.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="11" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Team.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="35" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/User.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="35" selection-start="136" selection-end="139" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#16#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/play/play_2.9.1/srcs/play_2.9.1-2.0-sources.jar!/play/api/libs/json/Reads.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/play/play_2.9.1/srcs/play_2.9.1-2.0-sources.jar!/play/api/libs/json/JsValue.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="0" selection-start="2321" selection-end="2321" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/play/play_2.9.1/srcs/play_2.9.1-2.0-sources.jar!/play/core/system/Invoker.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="0" selection-start="2037" selection-end="2037" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/games.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="28" selection-start="825" selection-end="825" vertical-scroll-proportion="-11.769231">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/lms.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="41" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0">
+        <state line="25" column="98" selection-start="713" selection-end="713" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Game.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="139" selection-end="169" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/services/GameService.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="21" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0">
+        <state line="10" column="36" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#18#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/routes">
+    <entry file="file://$PROJECT_DIR$/app/repositories/GameRepository.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="6" selection-start="658" selection-end="658" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="10" column="53" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#22#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/GamesController.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="16" selection-start="1234" selection-end="1234" vertical-scroll-proportion="0.5958188">
+        <state line="36" column="82" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.44425088">
           <folding>
             <element signature="e#21#53#0" expanded="true" />
           </folding>

@@ -9,7 +9,9 @@ import org.joda.time.DateTime
 import repositories.GameRepository
 import play.api.mvc.{Request, Controller}
 import com.codahale.jerkson.Json
-import services.GameService
+import play.api.libs.json.Json.toJson
+import services.{UserService, GameService}
+import org.bson.types.ObjectId
 
 object GamesController extends Controller with Secured {
   //  val teamForm: Form[Team] = Form(
@@ -20,19 +22,19 @@ object GamesController extends Controller with Secured {
   //  )
   def gameForm(userName: String) = Form(
     mapping(
-      "id" -> number,
+      "id" -> nonEmptyText,
       "name" -> nonEmptyText
     )
       ((id, name) => {
-        Game(id, name, new DateTime(), userName, None, null, None)
+        GameService.createGame(name, userName)
       })
-      ((game: Game) => Some(game.id, game.name))
+      ((game: Game) => Some(game.id.toString, game.name))
   )
 
 
   def index = IsAuthenticated {
     username => _ =>
-      Ok(views.html.games("games page " + username))
+        Ok(views.html.games(Json.generate(GameRepository.findGamesByUser(username))))
   }
 
   def newGame = IsAuthenticated {

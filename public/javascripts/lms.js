@@ -1,4 +1,5 @@
 // Load the application once the DOM is ready, using `jQuery.ready`:
+//var Games = null
 $(function(){
 
     // Game Model
@@ -191,7 +192,7 @@ $(function(){
             this.footer = this.$('footer');
             this.main = $('#main');
 
-            Games.fetch();
+            Games.reset(data);
         },
 
         // Re-rendering the App just means refreshing the statistics -- the rest
@@ -248,6 +249,7 @@ $(function(){
     });
 
     // Finally, we kick things off by creating the **App**.
-    var App = new AppView;
+    window.App = new AppView;
+
 
 });
