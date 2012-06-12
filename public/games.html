@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Last man standing - games</title>
+    <link rel="stylesheet" href="stylesheets/lms.css"/>
+</head>
+
+<body>
+
+<div id="gameapp">
+
+    <header>
+        <h1>Your games</h1>
+        <input id="new-game" type="text" placeholder="Start a new game...">
+    </header>
+
+    <section id="main">
+        <input id="toggle-all" type="checkbox">
+        <label for="toggle-all">Mark all as complete</label>
+        <!--main game list-->
+        <ul id="game-list"></ul>
+    </section>
+
+    <footer>
+        <a id="clear-completed">Clear completed</a>
+        <div id="game-count"></div>
+    </footer>
+
+</div>
+
+<div id="instructions">
+    Double-click to edit a game.
+</div>
+
+
+<script src="javascripts/json2.js"></script>
+<script src="javascripts/jquery-1.7.1.js"></script>
+<script src="javascripts/underscore-1.3.1.js"></script>
+<script src="javascripts/backbone.js"></script>
+<script src="javascripts/lms.js"></script>
+
+<!-- Templates -->
+
+<script type="text/template" id="item-template">
+    <div class="view">
+        <input class="toggle" type="checkbox" <%= started ? 'checked="checked"' : '' %> />
+        <label><%= name %></label>
+        <a class="start"></a>
+        <a class="destroy"></a>
+    </div>
+    <input class="edit" type="text" value="<%= name %>" />
+</script>
+
+<script type="text/template" id="stats-template">
+    <% if (started) { %>
+    <a id="clear-completed">Clear <%= started %> completed <%= started == 1 ? 'item' : 'items' %></a>
+    <% } %>
+    <div class="game-count"><b><%= remaining %></b> <%= remaining == 1 ? 'item' : 'items' %> left</div>
+</script>
+
+</body>
+</html>

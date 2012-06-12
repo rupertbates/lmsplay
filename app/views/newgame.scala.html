@@ -1,0 +1,8 @@
+@(form : Form[Game])
+@main("Last Man Standing") {
+@helper.form(action = routes.GamesController.createGame) {
+@helper.inputText(form("name"))
+<input type="hidden" name="UUID" id="UUID" value="@form(" UUID").value">
+<input type="submit" value="Save game"/>
+}
+}

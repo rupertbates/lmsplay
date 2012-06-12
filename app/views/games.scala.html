@@ -1,7 +1,12 @@
 @(userName: String)
 
 @main("Last Man Standing") {
-<a href="@routes.Application.logout()">Logout</a>
+<ul>
+    <li><a href="@routes.GamesController.newGame()">New game</a></li>
+    <li><a href="@routes.ApplicationController.logout()">Logout</a></li>
+</ul>
+
 <h1>Hello @userName</h1>
+
 
 }

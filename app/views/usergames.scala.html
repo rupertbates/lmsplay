@@ -1,0 +1,9 @@
+@(games: List[Game])
+
+<ul>
+    @games.map { game =>
+    <li>
+        @game.name @game.created
+    </li>
+    }
+</ul>

@@ -19,7 +19,7 @@ object UserService {
   }
 
   def getUserData(user: User): Option[User] = {
-    UserRepository.findOneByID(user.id)
+    UserRepository.findOneById(user.id)
   }
 
   def saveUser(user: User) {

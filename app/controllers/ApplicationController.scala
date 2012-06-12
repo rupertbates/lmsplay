@@ -36,7 +36,7 @@ object ApplicationController extends Controller {
           promiseOfUser.map(option =>
             option match {
               case None => Redirect(routes.ApplicationController.index).withNewSession.flashing("Login failed" -> "Login failure")
-              case Some(user) => Redirect(routes.GamesController.index).withSession("username" -> user.username)
+              case Some(user) => Redirect(routes.GamesController.index).withSession(("username" -> user.username), ("userId" -> user.id.toString))
             })
         }
       }
@@ -52,31 +52,4 @@ object ApplicationController extends Controller {
   }
 }
 
-/**
- * Provide security features
- */
-trait Secured {
 
-  /**
-   * Retrieve the connected user email.
-   */
-  private def username(request: RequestHeader) = request.session.get("username")
-
-  /**
-   * Redirect to facebook if the user is not authorized.
-   */
-  private def onUnauthorized(request: RequestHeader) = {
-    val state = java.util.UUID.randomUUID().toString
-    Results.Redirect(Facebook.AuthenticateBaseUrl + state).withSession("state" -> state)
-  }
-
-  // --
-
-  /**
-   * Action for authenticated users.
-   */
-  def IsAuthenticated(f: => String => Request[AnyContent] => Result) = Security.Authenticated(username, onUnauthorized) {
-    user => Action(request => f(user)(request))
-  }
-
-}
