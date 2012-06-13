@@ -1,9 +1,9 @@
 package services
 
-import models.Game
 import org.joda.time.DateTime
 import repositories.GameRepository
 import org.bson.types.ObjectId
+import models.{Game}
 
 object GameService {
   def createGame(name : String, creator : String) : Game = {

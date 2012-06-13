@@ -19,8 +19,8 @@
     </header>
 
     <section id="main">
-        <input id="toggle-all" type="checkbox">
-        <label for="toggle-all">Mark all as complete</label>
+        <!--<input id="toggle-all" type="checkbox">
+        <label for="toggle-all">Mark all as complete</label>-->
         <!--main game list-->
         <ul id="game-list"></ul>
     </section>
@@ -47,21 +47,38 @@
 
 <!-- Templates -->
 
-<script type="text/template" id="item-template">
+<script type="text/template" id="game-template">
     <div class="view">
-        <input class="toggle" type="checkbox" <%= started ? 'checked="checked"' : '' %> />
         <label><%= name %></label>
-        <a class="start"></a>
-        <a class="destroy"></a>
+        <input class="edit-name" type="text" value="<%= name %>" />
+        Players:
+        <ul id="player-list">
+            <!--<% _(players).each(function(player) { %>
+            <li>
+                <%= player %>
+            <a class="destroy-player"></a>
+            </li>
+            <% }); %>-->
+        </ul>
+
+        <% if(!started){%><a class="start"></a><%}%>
+        <input class="add-player" type="text" value="" />
+        <% if(!started){%><a class="add-player">Add a player</a><%}%>
+        <a class="destroy-game"></a>
     </div>
-    <input class="edit" type="text" value="<%= name %>" />
 </script>
 
+<script type="text/template" id="player-template">
+    <div class="view">
+        <label><%= username %></label>
+        <a class="destroy-player"></a>
+    </div>
+</script>
+
+
+
 <script type="text/template" id="stats-template">
-    <% if (started) { %>
-    <a id="clear-completed">Clear <%= started %> completed <%= started == 1 ? 'item' : 'items' %></a>
-    <% } %>
-    <div class="game-count"><b><%= remaining %></b> <%= remaining == 1 ? 'item' : 'items' %> left</div>
+    <div class="game-count"><b>You are playing in <%= started %> started <%= started == 1 ? 'game' : 'games' %> and <%= unstarted %> unstarted <%= unstarted == 1 ? 'game' : 'games' %></b></div>
 </script>
 
 </body>

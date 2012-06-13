@@ -74,6 +74,12 @@ body {
     border-bottom: 1px solid #cccccc;
 }
 
+#game-list li label {
+    display: block;
+    padding-bottom: 10px;
+}
+
+
 #game-list li:last-child {
     border-bottom: none;
 }
@@ -93,53 +99,94 @@ body {
     background: url(../images/favicon.png) no-repeat;
 }
 
-#game-list .destroy {
+#game-list .destroy-game {
     position: absolute;
     right: 5px;
     top: 20px;
-    display: none;
+
     cursor: pointer;
     width: 20px;
     height: 20px;
     background: url(../images/destroy.png) no-repeat;
 }
 
-#game-list li:hover .destroy {
+#game-list li:hover .destroy-game {
     display: block;
 }
 
-#game-list .destroy:hover {
+#game-list .destroy-game:hover {
     background-position: 0 -20px;
 }
 
-#game-list li.editing {
-    border-bottom: none;
-    margin-top: -1px;
-    padding: 0;
+#game-list .destroy-player {
+    position: absolute;
+    right: 5px;
+    top: 20px;
+
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background: url(../images/destroy.png) no-repeat;
 }
 
-#game-list li.editing:last-child {
-    margin-bottom: -1px;
+#game-list li:hover .destroy-player {
+    display: block;
 }
 
-#game-list li.editing .edit {
+#game-list .destroy-player:hover {
+    background-position: 0 -20px;
+}
+
+/*#game-list li.editing {*/
+    /*border-bottom: none;*/
+    /*margin-top: -1px;*/
+    /*padding: 0;*/
+/*}*/
+
+/*#game-list li.editing:last-child {*/
+    /*margin-bottom: -1px;*/
+/*}*/
+
+
+/*Hide all the editing elements by default*/
+#game-list li .edit-name,#game-list li input.add-player,#game-list li .edit-player {
+    display: none;
+}
+/*Editing the game name*/
+#game-list li.editing .edit-name {
     display: block;
     width: 444px;
     padding: 13px 15px 14px 20px;
     margin: 0;
 }
 
-#game-list li.editing .view {
+#game-list li.editing .view label {
     display: none;
 }
 
-#game-list li .view label {
-    word-break: break-word;
+/*Adding a player*/
+#game-list li.add-player input.add-player {
+    display: block;
+    width: 444px;
+    padding: 13px 15px 14px 20px;
+    margin: 0;
 }
 
-#game-list li .edit {
+#game-list li.add-player a.add-player {
     display: none;
 }
+
+
+
+
+/*#game-list li .view label {*/
+    /*word-break: break-word;*/
+/*}*/
+
+
+
+
+
 
 #gameapp footer {
     display: none;

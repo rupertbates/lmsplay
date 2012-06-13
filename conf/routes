@@ -16,11 +16,12 @@ GET     /logout                             controllers.ApplicationController.lo
 
 #Games
 GET     /games      controllers.GamesController.index
+GET     /games/list      controllers.GamesController.listGames
 GET     /games/new  controllers.GamesController.newGame
 POST    /games      controllers.GamesController.createGame
-GET     /games/:id  controllers.GamesController.getGame(id : Int)
-PUT     /games/:id  controllers.GamesController.updateGame(id : Int)
-DELETE  /games/:id  controllers.GamesController.deleteGame(id : Int)
+GET     /games/:id  controllers.GamesController.getGame(id : String)
+PUT     /games/:id  controllers.GamesController.updateGame(id : String)
+DELETE  /games/:id  controllers.GamesController.deleteGame(id : String)
 
 
 # Map static resources from the /public folder to the /assets URL path

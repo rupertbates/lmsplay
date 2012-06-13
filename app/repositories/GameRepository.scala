@@ -10,4 +10,10 @@ object GameRepository extends SalatDAO[Game, Int](collection = MongoConnection()
   def findGamesByUser(username : String) = {
     find(MongoDBObject("players" -> username)).toList
   }
+  def removeById(id : String) = {
+    findOneById(id).map(remove(_))
+  }
+  def findOneById(id : String) = {
+    findOne((MongoDBObject("_id" -> id)))
+  }
 }

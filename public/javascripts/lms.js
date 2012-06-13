@@ -1,80 +1,143 @@
 // Load the application once the DOM is ready, using `jQuery.ready`:
 //var Games = null
-$(function(){
+$(function () {
+    //Player model & collection
+    var Player = Backbone.Model.extend({
 
-    // Game Model
-    // ----------
+        //ensure that the players list is always converted to a PlayersList collection
+        set: function(attributes, options) {
+            this.raw = attributes;
+//            if(attributes.name == undefined)
+//                attributes = {name : attributes};
+//            return Backbone.Model.prototype.set.call(this, attributes, options);
+        }
+    });
+    var PlayerList = Backbone.Collection.extend({model:Player});
 
-    // Our  **Game** model has a `name`, 'created', `order`, and `started` attributes.
-    var Game = Backbone.Model.extend({
+    // The DOM element for a player ...
+    var PlayerView = Backbone.View.extend({
 
-        // Default attributes for the game item.
-        defaults: function() {
-            return {
-                name: "New game...",
-                order: Games.nextOrder(),
-                started: undefined
-            };
+        //... is a list tag.
+        tagName:"li",
+
+        // Cache the template function for a single item.
+        template:_.template($('#player-template').html()),
+
+        // The DOM events specific to an item.
+        events:{
+            "click a.destroy-player":"clearPlayer"
         },
 
-        // Ensure that each game created has `name`.
-        initialize: function() {
-            if (!this.get("name")) {
-                this.set({"name": this.defaults.name});
-            }
+        initialize:function () {
+            //this.model.bind('change', this.render, this);
+            //this.model.bind('destroy', this.remove, this);
         },
 
-        start: function(){
-            if(this.get("started") == undefined){
-                this.set({"started": new Date()});
-            }
+        // Re-render the name of the player.
+        render:function () {
+            this.$el.html(this.template({username: this.model}));
+            return this;
         },
 
-        // Toggle the `started` state of this game item.
-        toggle: function() {
-            this.save({started: !this.get("started")});
-        },
-
-        // Remove this Game from *localStorage* and delete its view.
-        clear: function() {
-            this.destroy();
+        // Remove the item, destroy the model.
+        clearPlayer:function () {
+            this.options.parent.model.removePlayer(this.model);
+            this.options.parent.render();
         }
 
     });
 
+    // Game Model
+    var Game = Backbone.Model.extend({
+
+        // Default attributes for the game item.
+        defaults:function () {
+            return {
+                name:"New game...",
+                order:Games.nextOrder(),
+                started:undefined
+            };
+        },
+
+        // Ensure that each game created has `name`.
+        initialize:function () {
+            if (!this.get("name")) {
+                this.set({"name":this.defaults.name});
+            }
+            //check there is a players array
+            if(!this.get("players")){
+                var players = [""];
+                this.set({players: players});
+            }
+        },
+
+        start:function () {
+            if (this.get("started") == undefined) {
+                this.save({"started":new Date()});
+            }
+        },
+
+        // Toggle the `started` state of this game item.
+        toggle:function () {
+            this.save({started:!this.get("started")});
+        },
+
+        // Remove this Game from the server and delete its view.
+        clear:function () {
+            this.destroy();
+        },
+        addPlayer:function(value){
+            var players = this.get("players");
+            players.push(value);
+            this.save({"players" : players});
+        },
+        removePlayer:function(value){
+            var players = _.reject(this.get("players"), function(player){return player == value;});
+            this.save({"players" : players});
+        }
+        //ensure that the players list is always converted to a PlayersList collection
+//        set: function(attributes, options) {
+//            if (attributes.players !== undefined && !(attributes.players instanceof PlayerList)) {
+//                attributes.players = new PlayerList(attributes.players);
+//            }
+//            return Backbone.Model.prototype.set.call(this, attributes, options);
+//        }
+
+    });
+
+
     // Game Collection
     // ---------------
-
-    // The collection of games is backed by *localStorage* instead of a remote
-    // server.
     var GameList = Backbone.Collection.extend({
 
         // Reference to this collection's model.
-        model: Game,
-        url: '/games',
+        model:Game,
+        url:'/games',
 
 //        // Save all of the game items under the `"games"` namespace.
 //        localStorage: new Store("games-backbone"),
 
         // Filter down the list of all game items that are finished.
-        started: function() {
-            return this.filter(function(game){ return game.get('started'); });
+        started:function () {
+            return this.filter(function (game) {
+                return game.get('started');
+            });
         },
 
         // Filter down the list to only game items that are still not finished.
-        remaining: function() {
+        unstarted:function () {
             return this.without.apply(this, this.started());
         },
 
         // We keep the Games in sequential order, despite being saved by unordered
         // GUID in the database. This generates the next order number for new items.
-        nextOrder: function() {
+        nextOrder:function () {
             if (!this.length) return 1;
             return this.last().get('order') + 1;
         },
 
         // Games are sorted by their original insertion order.
-        comparator: function(game) {
+        comparator:function (game) {
             return game.get('order');
         }
 
@@ -84,78 +147,120 @@ $(function(){
     var Games = new GameList;
 
     // Game Item View
-    // --------------
-
     // The DOM element for a game item...
     var GameView = Backbone.View.extend({
 
         //... is a list tag.
-        tagName:  "li",
+        tagName:"li",
 
         // Cache the template function for a single item.
-        template: _.template($('#item-template').html()),
+        template:_.template($('#game-template').html()),
 
         // The DOM events specific to an item.
-        events: {
-            "click a.start"   : "start",
-            "click .toggle"   : "toggleDone",
-            "dblclick .view"  : "edit",
-            "click a.destroy" : "clear",
-            "keypress .edit"  : "updateOnEnter",
-            "blur .edit"      : "close"
+        events:{
+            "click a.add-player":"addPlayer",
+            "click a.start":"start",
+            "dblclick .view":"editName",
+            "click a.destroy-game":"clearGame",
+            "keypress .edit-name":"updateOnEnterName",
+            "blur .edit-name":"closeName",
+            "keypress input.add-player":"updateOnEnterAddPlayer",
+            "change input.add-player":"closeAddPlayer"
         },
 
         // The GameView listens for changes to its model, re-rendering. Since there's
         // a one-to-one correspondence between a **Game** and a **GameView** in this
         // app, we set a direct reference on the model for convenience.
-        initialize: function() {
+        initialize:function () {
             this.model.bind('change', this.render, this);
             this.model.bind('destroy', this.remove, this);
+            this.players = this.model.get('players');
+            //this.players.bind('add', this.onPlayerAdded, this);
+
         },
 
         // Re-render the names of the game item.
-        render: function() {
+        render:function () {
             this.$el.html(this.template(this.model.toJSON()));
-            this.$el.toggleClass('started', this.model.get('started'));
-            this.input = this.$('.edit');
+            var playerList = this.$("#player-list");
+            playerList.empty();
+            var parent = this;
+
+            _.each(this.model.get("players"), function(player){
+                var view = new PlayerView({ model: player, parent: parent });
+                playerList.append(view.render().el);
+            });
+
+            //this.$("#game-list").append(view.render().el);
+            this.editName = this.$('.edit-name');
+            this.addPlayer = this.$('input.add-player');
             return this;
         },
 
+        // Remove the item, destroy the model.
+        clearPlayer:function () {
+            this.model.clear();
+        },
+
+        //Add a player to the game
+        addPlayer:function () {
+            this.$el.addClass("add-player");
+            this.addPlayer.focus();
+        },
+
+        // Close the `"addPlayer"` mode, saving changes to the game.
+        closeAddPlayer:function () {
+            var value = this.addPlayer.val();
+            this.addPlayer.val("");
+            if (value) {
+                this.model.addPlayer(value);
+            }
+            this.$el.removeClass("add-player");
+            this.render(); //need to call render because players is not a backbone collection
+        },
+
+        // If you hit `enter`, we're through editing the item.
+        updateOnEnterAddPlayer:function (e) {
+            if (e.keyCode == 13) this.closeAddPlayer();
+        },
+
+//        onPlayerAdded: function(player) {
+//            var view = new PlayerView({model:player});
+//            this.$("#player-list").append(view.render().el);
+//        },
+
         // Set the `"started"` date of the model.
-        start: function() {
+        start:function () {
             this.model.start();
         },
 
-        // Toggle the `"started"` state of the model.
-        toggleDone: function() {
-            this.model.toggle();
-        },
-
         // Switch this view into `"editing"` mode, displaying the input field.
-        edit: function() {
+        editName:function () {
             this.$el.addClass("editing");
-            this.input.focus();
+            this.editName.focus();
         },
 
         // Close the `"editing"` mode, saving changes to the game.
-        close: function() {
-            var value = this.input.val();
+        closeName:function () {
+            var value = this.editName.val();
             if (!value) this.clear();
-            this.model.save({name: value});
+            this.model.save({name:value});
             this.$el.removeClass("editing");
         },
 
         // If you hit `enter`, we're through editing the item.
-        updateOnEnter: function(e) {
-            if (e.keyCode == 13) this.close();
+        updateOnEnterName:function (e) {
+            if (e.keyCode == 13) this.closeName();
         },
 
         // Remove the item, destroy the model.
-        clear: function() {
+        clearGame:function () {
             this.model.clear();
         }
 
     });
+
+
 
     // The Application
     // ---------------
@@ -165,26 +270,21 @@ $(function(){
 
         // Instead of generating a new element, bind to the existing skeleton of
         // the App already present in the HTML.
-        el: $("#gameapp"),
+        el:$("#gameapp"),
 
         // Our template for the line of statistics at the bottom of the app.
-        statsTemplate: _.template($('#stats-template').html()),
+        statsTemplate:_.template($('#stats-template').html()),
 
         // Delegated events for creating new items, and clearing completed ones.
-        events: {
-            "keypress #new-game":  "createOnEnter",
-            "click #clear-completed": "clearCompleted",
-            "click #toggle-all": "toggleAllComplete"
+        events:{
+            "keypress #new-game":"createOnEnter"
         },
 
         // At initialization we bind to the relevant events on the `Games`
         // collection, when items are added or changed. Kick things off by
         // loading any preexisting games that might be saved in *localStorage*.
-        initialize: function() {
-
+        initialize:function () {
             this.input = this.$("#new-game");
-            this.allCheckbox = this.$("#toggle-all")[0];
-
             Games.bind('add', this.addOne, this);
             Games.bind('reset', this.addAll, this);
             Games.bind('all', this.render, this);
@@ -192,64 +292,51 @@ $(function(){
             this.footer = this.$('footer');
             this.main = $('#main');
 
-            Games.reset(data);
         },
 
         // Re-rendering the App just means refreshing the statistics -- the rest
         // of the app doesn't change.
-        render: function() {
+        render:function () {
             var started = Games.started().length;
-            var remaining = Games.remaining().length;
+            var unstarted = Games.unstarted().length;
 
             if (Games.length) {
                 this.main.show();
                 this.footer.show();
-                this.footer.html(this.statsTemplate({started: started, remaining: remaining}));
+                this.footer.html(this.statsTemplate({started:started, unstarted:unstarted}));
             } else {
                 this.main.hide();
                 this.footer.hide();
             }
-
-            this.allCheckbox.checked = !remaining;
         },
 
         // Add a single game item to the list by creating a view for it, and
         // appending its element to the `<ul>`.
-        addOne: function(game) {
-            var view = new GameView({model: game});
+        addOne:function (game) {
+            var view = new GameView({model:game});
             this.$("#game-list").append(view.render().el);
         },
 
         // Add all items in the **Games** collection at once.
-        addAll: function() {
+        addAll:function () {
             Games.each(this.addOne);
         },
 
         // If you hit return in the main input field, create new **Game** model,
         // persisting it to *localStorage*.
-        createOnEnter: function(e) {
+        createOnEnter:function (e) {
             if (e.keyCode != 13) return;
             if (!this.input.val()) return;
 
-            Games.create({name: this.input.val()});
+            Games.create({name:this.input.val()});
             this.input.val('');
-        },
-
-        // Clear all started game items, destroying their models.
-        clearCompleted: function() {
-            _.each(Games.started(), function(game){ game.clear(); });
-            return false;
-        },
-
-        toggleAllComplete: function () {
-            var started = this.allCheckbox.checked;
-            Games.each(function (game) { game.save({'started': started}); });
         }
 
     });
 
     // Finally, we kick things off by creating the **App**.
     window.App = new AppView;
+    Games.reset(data);
 
 
 });
