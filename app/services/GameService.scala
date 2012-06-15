@@ -4,10 +4,6 @@ import org.joda.time.DateTime
 import repositories.GameRepository
 import org.bson.types.ObjectId
 import models.{UserPick, GameRound, Game}
-import helpers.CompetitionWeekHelper.getCurrentCompetitionWeek
-import com.codahale.jerkson.Json
-import collection.mutable.{ListBuffer, Map}
-import collection.mutable
 import helpers.CompetitionWeekHelper
 
 object GameService {

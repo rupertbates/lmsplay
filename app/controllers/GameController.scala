@@ -1,19 +1,13 @@
 package controllers
 
-import models.{Game, User, Team}
-import play.api.mvc.BodyParsers.parse
+import models.Game
 import play.api.data._
 import play.api.data.Forms._
-import java.util.UUID
-import org.joda.time.DateTime
 import repositories.GameRepository
-import play.api.mvc.{Request, Controller}
+import play.api.mvc.Controller
 import com.codahale.jerkson.Json
-import play.api.libs.json.Json.toJson
-import org.bson.types.ObjectId
-import com.codahale.jerkson.Json.parse
-import services.{MatchService, UserService, GameService}
-import viewmodels.ViewGameModel
+import services.{MatchService, GameService}
+import viewmodels.{UserGameModel, ViewGameModel}
 import helpers.CompetitionWeekHelper.getNextCompetitionWeek
 import play.api.Logger
 import helpers.CompetitionWeekHelper
@@ -28,9 +22,10 @@ object GameController extends Controller with Secured {
         game match {
           case None => NotFound
           case Some(g) => {
-            val matches = MatchService.getNextWeeksMatches
+            val nextWeeksMatches = MatchService.getNextWeeksMatchesByDay
+            val thisWeeksMatches = MatchService.getThisWeeksMatches
             val userPick = g.getUserPick(getNextCompetitionWeek, username)
-            val model = new ViewGameModel(g, getNextCompetitionWeek, matches, userPick)
+            val model = new ViewGameModel(new UserGameModel(g, username), getNextCompetitionWeek, nextWeeksMatches, userPick)
             Ok(views.html.gameEmber(Json.generate(model)))
           }
         }

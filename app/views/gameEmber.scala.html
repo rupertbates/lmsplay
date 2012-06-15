@@ -23,14 +23,30 @@
         </ul>
         <div id="matches">
             <h3>Matches:</h3>
-            <ul id="match-list">
-                {{#each model.thisWeeksMatches}}
+            <ul >
+                {{#each model.nextWeeksMatches}}
                 <li>
+                    {{day}}
+                    <ul id="match-list">
+
+                    {{#each matches}}
+                        <li>
                     {{view Em.RadioButton titleBinding="homeTeam.name" optionBinding="homeTeam.name" group="matches" valueBinding="App.game.userPick"}} -
                     {{view Em.RadioButton titleBinding="awayTeam.name" optionBinding="awayTeam.name" group="matches" valueBinding="App.game.userPick"}}
+                            </li>
+                    {{/each}}
+                        </ul>
                 </li>
                 {{/each}}
             </ul>
+        </div>
+        <div id="your-picks">
+            <h3>Your picks:</h3>
+            {{#each model.game.picks}}
+            <li>
+                {{team}}
+            </li>
+            {{/each}}
         </div>
 
     </div>

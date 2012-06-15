@@ -23,6 +23,9 @@ case class Game(@Key("_id") id : String,
   def getUserPick(competitionWeek : Int, username : String) = {
     getGameRound(competitionWeek).userPicks.find(p => p.username == username).getOrElse(new UserPick("", "")).team
   }
+  def getUserPicks(username : String) = {
+    gameRounds.flatten(r => r.userPicks.filter(p => p.username == username))
+  }
   def getGameRound(competitionWeek : Int) = {
     val round = gameRounds.find(g => g.competitionWeek == competitionWeek)
     round match{
