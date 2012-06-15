@@ -4,7 +4,6 @@
 
 # Home page
 GET     /                           controllers.ApplicationController.index
-GET     /matches                  controllers.ApplicationController.matches
 
 # Authentication
 GET     /callback                           controllers.ApplicationController.facebookAuthCallback
@@ -15,14 +14,22 @@ GET     /logout                             controllers.ApplicationController.lo
 #logged in user
 
 #Games
-GET     /games      controllers.GamesController.index
-GET     /games/list      controllers.GamesController.listGames
-GET     /games/new  controllers.GamesController.newGame
-POST    /games      controllers.GamesController.createGame
-GET     /games/:id  controllers.GamesController.getGame(id : String)
-PUT     /games/:id  controllers.GamesController.updateGame(id : String)
-DELETE  /games/:id  controllers.GamesController.deleteGame(id : String)
+#html routes
+GET     /games      controllers.GameController.HtmlRoutes.index
+GET     /games/new  controllers.GameController.HtmlRoutes.newGame
+GET     /games/view/:id controllers.GameController.HtmlRoutes.viewGame(id: String)
+#ajax routes
+GET     /games/list controllers.GameController.JsonRoutes.listGames
+POST    /games      controllers.GameController.JsonRoutes.createGame
+GET     /games/:id  controllers.GameController.JsonRoutes.getGame(id : String)
+PUT     /games/:id  controllers.GameController.JsonRoutes.updateGame(id : String)
+DELETE  /games/:id  controllers.GameController.JsonRoutes.deleteGame(id : String)
 
+#matches
+GET     /matches            controllers.MatchController.matches
+GET     /matches/list       controllers.MatchController.listMatches
+GET     /matches/week       controllers.MatchController.listWeeksMatches(plusWeeks : Int = 0)
+GET     /matches/week/:plusWeeks       controllers.MatchController.listWeeksMatches(plusWeeks : Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

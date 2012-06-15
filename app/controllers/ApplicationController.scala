@@ -10,15 +10,11 @@ import services.UserService
 object ApplicationController extends Controller {
 
   def index = Action {
-    request =>
-      Ok("Hello ")
-  }
-
-  def matches: Action[AnyContent] = {
-    val matches = MatchRepository.find(null).toList
-    Action {
-      Ok(views.html.matches(matches))
-    }
+    implicit request =>
+      session.get("username") match {
+        case None => Ok(views.html.index("Hello"))
+        case Some(user) => Ok(views.html.loggedInHome(user))
+      }
   }
 
   def facebookAuthCallback = Action {
@@ -36,7 +32,7 @@ object ApplicationController extends Controller {
           promiseOfUser.map(option =>
             option match {
               case None => Redirect(routes.ApplicationController.index).withNewSession.flashing("Login failed" -> "Login failure")
-              case Some(user) => Redirect(routes.GamesController.index).withSession(("username" -> user.username), ("userId" -> user.id.toString))
+              case Some(user) => Redirect(routes.GameController.HtmlRoutes.index).withSession(("username" -> user.username), ("userId" -> user.id.toString))
             })
         }
       }

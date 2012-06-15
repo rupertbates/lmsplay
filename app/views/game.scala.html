@@ -1,0 +1,33 @@
+@(game: String)
+
+@main("Game ") {
+<div id="game"></div>
+
+<script type="text/javascript">
+    var data = @Html(game);
+</script>
+@jsincludes()
+<script src="/assets/javascripts/lms-view-game.js"></script>
+
+<!-- Templates -->
+<script type="text/template" id="game-template">
+    <div class="view">
+        <h2><%= game.name %></h2>
+        <h3>Players:</h3>
+        <ul id="player-list">
+        </ul>
+
+        <% if(started){
+        print("game started " + started.toString('dddd, MMMM d'))
+        }else{%><a class="start"></a><%}%>
+
+        <div id="match-list"></div>
+
+    </div>
+</script>
+
+<script type="text/template" id="player-template">
+    <%= username %>
+</script>
+
+}

@@ -1,6 +1,6 @@
 package models
 
-import java.util.Date
+import org.joda.time.DateTime
 
-case class Match(kickOffTime : String, homeTeam : Team,  awayTeam : Team) {
+case class Match(competitionWeek : Int, kickOffTime : DateTime, homeTeam : Team,  awayTeam : Team) {
 }

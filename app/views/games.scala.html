@@ -1,29 +1,15 @@
-@(games : String)
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>Last man standing - games</title>
-    <link rel="stylesheet" href="assets/stylesheets/lms.css"/>
-</head>
-
-<body>
-
+@(username: String, games : String)
+@main("Edit games"){
 <div id="gameapp">
-
     <header>
         <h1>Your games</h1>
-        <input id="new-game" type="text" placeholder="Start a new game...">
     </header>
-
     <section id="main">
-        <!--<input id="toggle-all" type="checkbox">
-        <label for="toggle-all">Mark all as complete</label>-->
         <!--main game list-->
         <ul id="game-list"></ul>
+        <input id="new-game" type="text" placeholder="Enter a name to start a new game...">
     </section>
+
 
     <footer>
         <a id="clear-completed">Clear completed</a>
@@ -38,30 +24,23 @@
 
 <script type="text/javascript">
     var data = @Html(games);
+    var user = "@username";
 </script>
-<script src="assets/javascripts/json2.js"></script>
-<script src="assets/javascripts/jquery-1.7.1.js"></script>
-<script src="assets/javascripts/underscore-1.3.1.js"></script>
-<script src="assets/javascripts/backbone.js"></script>
-<script src="assets/javascripts/lms.js"></script>
+@jsincludes()
+<script src="assets/javascripts/lms-edit-games.js"></script>
 
 <!-- Templates -->
-
 <script type="text/template" id="game-template">
     <div class="view">
         <label><%= name %></label>
         <input class="edit-name" type="text" value="<%= name %>" />
         Players:
         <ul id="player-list">
-            <!--<% _(players).each(function(player) { %>
-            <li>
-                <%= player %>
-            <a class="destroy-player"></a>
-            </li>
-            <% }); %>-->
         </ul>
 
-        <% if(!started){%><a class="start"></a><%}%>
+        <% if(started){
+            print("game started " + started.toString('dddd, MMMM d'))
+        }else{%><a class="start"></a><%}%>
         <input class="add-player" type="text" value="" />
         <% if(!started){%><a class="add-player">Add a player</a><%}%>
         <a class="destroy-game"></a>
@@ -70,16 +49,14 @@
 
 <script type="text/template" id="player-template">
     <div class="view">
-        <label><%= username %></label>
-        <a class="destroy-player"></a>
+
+        <% if(username != user){%><%= username %><a class="destroy-player"></a>
+        <%}else{%><label>you</label><%}%>
     </div>
 </script>
-
-
 
 <script type="text/template" id="stats-template">
     <div class="game-count"><b>You are playing in <%= started %> started <%= started == 1 ? 'game' : 'games' %> and <%= unstarted %> unstarted <%= unstarted == 1 ? 'game' : 'games' %></b></div>
 </script>
+}
 
-</body>
-</html>

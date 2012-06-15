@@ -28,13 +28,17 @@ trait Secured {
   /**
    * Action for authenticated users.
    */
-//  def IsAuthenticated(f: => String => Request[AnyContent] => Result) = Security.Authenticated(username, onUnauthorized) {
-//    user => Action(request => f(user)(request))
-//  }
-  def IsAuthenticated[T](parser : BodyParser[T])(f: => String => Request[T] => Result) = Security.Authenticated(username, onUnauthorized) {
-    user => Action(parser){request => f(user)(request)}
-  }
-  def IsAuthenticated( f: => String => Request[AnyContent] => Result) :  Action[(Action[AnyContent], AnyContent)] = IsAuthenticated(play.api.mvc.BodyParsers.parse.anyContent)(f)
+  //  def IsAuthenticated(f: => String => Request[AnyContent] => Result) = Security.Authenticated(username, onUnauthorized) {
+  //    user => Action(request => f(user)(request))
+  //  }
+  def IsAuthenticated[T](parser: BodyParser[T])(f: => String => Request[T] => Result) =
+    Security.Authenticated(username, onUnauthorized) {
+      user => Action(parser) {
+        request => f(user)(request)
+      }
+    }
+
+  def IsAuthenticated(f: => String => Request[AnyContent] => Result): Action[(Action[AnyContent], AnyContent)] = IsAuthenticated(play.api.mvc.BodyParsers.parse.anyContent)(f)
 
 
 }

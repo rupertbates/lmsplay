@@ -70,8 +70,9 @@ body {
 #game-list li {
     padding: 18px 20px 18px 0;
     position: relative;
-    font-size: 24px;
+    font-size: 14px;
     border-bottom: 1px solid #cccccc;
+    font-size: 18px;
 }
 
 #game-list li label {
@@ -266,3 +267,11 @@ body {
 #credits a {
     color: #888;
 }
+
+/*#match-list li{*/
+
+/*}*/
+
+/*.left-column{*/
+    /*min-width:46%;*/
+/*}*/

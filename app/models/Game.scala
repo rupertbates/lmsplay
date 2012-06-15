@@ -11,8 +11,8 @@ case class Game(@Key("_id") id : String,
                 name : String,
                 created : DateTime = new DateTime(),
                 creator : String,
-                players : Option[List[String]],
+                players : List[String],
                 started : Option[DateTime],
-                gameRounds : Option[Map[Int, Map[String, String]]]) //[gameRoundNumber -> [UserName -> ClubPicked]]
+                gameRounds : Map[Int, Map[String, String]]) //[gameRoundNumber -> [UserName -> ClubPicked]]
 
 

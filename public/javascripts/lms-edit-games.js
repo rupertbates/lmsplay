@@ -49,7 +49,6 @@ $(function () {
 
     // Game Model
     var Game = Backbone.Model.extend({
-
         // Default attributes for the game item.
         defaults:function () {
             return {
@@ -94,14 +93,14 @@ $(function () {
         removePlayer:function(value){
             var players = _.reject(this.get("players"), function(player){return player == value;});
             this.save({"players" : players});
-        }
+        },
         //ensure that the players list is always converted to a PlayersList collection
-//        set: function(attributes, options) {
-//            if (attributes.players !== undefined && !(attributes.players instanceof PlayerList)) {
-//                attributes.players = new PlayerList(attributes.players);
-//            }
-//            return Backbone.Model.prototype.set.call(this, attributes, options);
-//        }
+        set: function(attributes, options) {
+            if (attributes.started !== undefined) {
+                attributes.started = new Date(attributes.started);
+            }
+            return Backbone.Model.prototype.set.call(this, attributes, options);
+        }
 
     });
 

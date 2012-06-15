@@ -1,6 +1,6 @@
 package TestSerialization
 
-import org.specs2.mutable.Specification
+import org.specs2.mutable._
 import helpers.Facebook
 import models.Game
 import com.codahale.jerkson.Json
