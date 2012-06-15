@@ -3,6 +3,6 @@ package viewmodels
 import models.{Match, Game}
 
 
-case class ViewGameModel(game : Game, thisWeeksMatches : List[Match], userPick : String = "") {
+case class ViewGameModel(game : Game, competitionWeek : Int, thisWeeksMatches : List[Match], userPick : String = "") {
 
 }

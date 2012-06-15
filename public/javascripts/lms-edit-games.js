@@ -1,10 +1,5 @@
-// Load the application once the DOM is ready, using `jQuery.ready`:
-//var Games = null
 $(function () {
-    //Player model & collection
     var Player = Backbone.Model.extend({
-
-        //ensure that the players list is always converted to a PlayersList collection
         set: function(attributes, options) {
             this.raw = attributes;
 //            if(attributes.name == undefined)
@@ -12,39 +7,25 @@ $(function () {
 //            return Backbone.Model.prototype.set.call(this, attributes, options);
         }
     });
-    var PlayerList = Backbone.Collection.extend({model:Player});
 
-    // The DOM element for a player ...
     var PlayerView = Backbone.View.extend({
-
-        //... is a list tag.
         tagName:"li",
-
         // Cache the template function for a single item.
         template:_.template($('#player-template').html()),
-
         // The DOM events specific to an item.
         events:{
             "click a.destroy-player":"clearPlayer"
         },
-
-        initialize:function () {
-            //this.model.bind('change', this.render, this);
-            //this.model.bind('destroy', this.remove, this);
-        },
-
         // Re-render the name of the player.
         render:function () {
             this.$el.html(this.template({username: this.model}));
             return this;
         },
-
         // Remove the item, destroy the model.
         clearPlayer:function () {
             this.options.parent.model.removePlayer(this.model);
             this.options.parent.render();
         }
-
     });
 
     // Game Model
@@ -53,7 +34,6 @@ $(function () {
         defaults:function () {
             return {
                 name:"New game...",
-                order:Games.nextOrder(),
                 started:undefined
             };
         },
@@ -69,18 +49,11 @@ $(function () {
                 this.set({players: players});
             }
         },
-
         start:function () {
             if (this.get("started") == undefined) {
                 this.save({"started":new Date()});
             }
         },
-
-        // Toggle the `started` state of this game item.
-        toggle:function () {
-            this.save({started:!this.get("started")});
-        },
-
         // Remove this Game from the server and delete its view.
         clear:function () {
             this.destroy();
@@ -94,67 +67,40 @@ $(function () {
             var players = _.reject(this.get("players"), function(player){return player == value;});
             this.save({"players" : players});
         },
-        //ensure that the players list is always converted to a PlayersList collection
+        //Make sure that started is a date type
         set: function(attributes, options) {
             if (attributes.started !== undefined) {
                 attributes.started = new Date(attributes.started);
             }
             return Backbone.Model.prototype.set.call(this, attributes, options);
         }
-
     });
-
-
     // Game Collection
     // ---------------
     var GameList = Backbone.Collection.extend({
-
         // Reference to this collection's model.
         model:Game,
         url:'/games',
-
-//        // Save all of the game items under the `"games"` namespace.
-//        localStorage: new Store("games-backbone"),
-
-        // Filter down the list of all game items that are finished.
+        // Filter down the list of all game items that are started.
         started:function () {
             return this.filter(function (game) {
                 return game.get('started');
             });
         },
-
-        // Filter down the list to only game items that are still not finished.
+        // Filter down the list to only game items that are still not started.
         unstarted:function () {
             return this.without.apply(this, this.started());
-        },
-
-        // We keep the Games in sequential order, despite being saved by unordered
-        // GUID in the database. This generates the next order number for new items.
-        nextOrder:function () {
-            if (!this.length) return 1;
-            return this.last().get('order') + 1;
-        },
-
-        // Games are sorted by their original insertion order.
-        comparator:function (game) {
-            return game.get('order');
         }
-
     });
 
     // Create our global collection of **Games**.
     var Games = new GameList;
 
     // Game Item View
-    // The DOM element for a game item...
     var GameView = Backbone.View.extend({
-
-        //... is a list tag.
         tagName:"li",
-
         // Cache the template function for a single item.
         template:_.template($('#game-template').html()),
-
         // The DOM events specific to an item.
         events:{
             "click a.add-player":"addPlayer",
@@ -166,7 +112,6 @@ $(function () {
             "keypress input.add-player":"updateOnEnterAddPlayer",
             "change input.add-player":"closeAddPlayer"
         },
-
         // The GameView listens for changes to its model, re-rendering. Since there's
         // a one-to-one correspondence between a **Game** and a **GameView** in this
         // app, we set a direct reference on the model for convenience.
@@ -174,8 +119,6 @@ $(function () {
             this.model.bind('change', this.render, this);
             this.model.bind('destroy', this.remove, this);
             this.players = this.model.get('players');
-            //this.players.bind('add', this.onPlayerAdded, this);
-
         },
 
         // Re-render the names of the game item.
@@ -184,7 +127,7 @@ $(function () {
             var playerList = this.$("#player-list");
             playerList.empty();
             var parent = this;
-
+            //render the players list
             _.each(this.model.get("players"), function(player){
                 var view = new PlayerView({ model: player, parent: parent });
                 playerList.append(view.render().el);
@@ -223,11 +166,6 @@ $(function () {
             if (e.keyCode == 13) this.closeAddPlayer();
         },
 
-//        onPlayerAdded: function(player) {
-//            var view = new PlayerView({model:player});
-//            this.$("#player-list").append(view.render().el);
-//        },
-
         // Set the `"started"` date of the model.
         start:function () {
             this.model.start();
@@ -259,14 +197,10 @@ $(function () {
 
     });
 
-
-
     // The Application
     // ---------------
-
     // Our overall **AppView** is the top-level piece of UI.
     var AppView = Backbone.View.extend({
-
         // Instead of generating a new element, bind to the existing skeleton of
         // the App already present in the HTML.
         el:$("#gameapp"),
@@ -332,10 +266,7 @@ $(function () {
         }
 
     });
-
     // Finally, we kick things off by creating the **App**.
     window.App = new AppView;
     Games.reset(data);
-
-
 });

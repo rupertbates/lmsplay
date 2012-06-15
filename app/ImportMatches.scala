@@ -2,17 +2,8 @@ import helpers.CompetitionWeekHelper
 import models.{Team, Match}
 import org.joda.time.DateTime
 import repositories.MatchRepository
-
-import com.fasterxml.jackson.module.scala.{CaseClassModule, OptionModule}
 import java.io.File
-import java.util.UUID
-import org.apache.http.client.methods.HttpPut
-import org.apache.http.entity.StringEntity
-import org.apache.http.impl.client.DefaultHttpClient
 import org.codehaus.jackson.map.ObjectMapper
-
-
-
 
   object ImportMatches {
     def importMatches() {

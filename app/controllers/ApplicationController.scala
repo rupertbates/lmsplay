@@ -32,7 +32,7 @@ object ApplicationController extends Controller {
           promiseOfUser.map(option =>
             option match {
               case None => Redirect(routes.ApplicationController.index).withNewSession.flashing("Login failed" -> "Login failure")
-              case Some(user) => Redirect(routes.GameController.HtmlRoutes.index).withSession(("username" -> user.username), ("userId" -> user.id.toString))
+              case Some(user) => Redirect(routes.GameController.HtmlRoutes.index).withSession(("username" -> user.username.replace('.', '_')), ("userId" -> user.id.toString))
             })
         }
       }

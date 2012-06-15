@@ -14,19 +14,23 @@ import org.bson.types.ObjectId
 import com.codahale.jerkson.Json.parse
 import services.{MatchService, UserService, GameService}
 import viewmodels.ViewGameModel
+import helpers.CompetitionWeekHelper.getNextCompetitionWeek
+import play.api.Logger
+import helpers.CompetitionWeekHelper
 
 object GameController extends Controller with Secured {
 
   object HtmlRoutes {
     def viewGame(id: String) = IsAuthenticated {
       username => _ =>
+        Logger.debug("Now = " + CompetitionWeekHelper.now)
         val game = GameService.getGame(id, username)
         game match {
           case None => NotFound
           case Some(g) => {
-            val matches = MatchService.getThisWeeksMatches()
-            val userPick = g.gameRounds(1).find(p => p._1 == username).getOrElse(("",""))._1
-            val model = new ViewGameModel(g, matches, userPick)
+            val matches = MatchService.getNextWeeksMatches
+            val userPick = g.getUserPick(getNextCompetitionWeek, username)
+            val model = new ViewGameModel(g, getNextCompetitionWeek, matches, userPick)
             Ok(views.html.gameEmber(Json.generate(model)))
           }
         }
@@ -62,7 +66,6 @@ object GameController extends Controller with Secured {
 
     def createGame = IsAuthenticated {
       username => implicit request =>
-
         val json = request.body.asJson.get
         val game = GameService.createGame((json \ "name").as[String], username)
         Ok(Json.generate(game))
@@ -75,6 +78,23 @@ object GameController extends Controller with Secured {
           val game = Json.parse[Game](json)
           GameRepository.save(game)
           Ok(Json.generate(game))
+        }
+    }
+
+    def pickTeam(id: String, competitionWeek: Int, team: String) = IsAuthenticated {
+      username =>
+        implicit request => {
+
+          if (GameService.pickTeam(id, competitionWeek, username, team)) {
+            Ok("Game updated successfully")
+          }else{
+            if(CompetitionWeekHelper.weekIsEditable(competitionWeek))
+              BadRequest("Couldn't update the game")
+            else
+              BadRequest("Can't update the user selection for this week as games have already started")
+          }
+
+
         }
     }
 
