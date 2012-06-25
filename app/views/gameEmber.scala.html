@@ -17,7 +17,7 @@
         <h2>{{model.game.name}}</h2>
 
 
-        This game started in week {{model.game.started}}<br />
+        This game started in week {{model.game.started}}<br/>
         The current match week is week {{model.thisMatchWeek.number}}
 
         <h3>Players:</h3>
@@ -28,33 +28,41 @@
         </ul>
         <div id="matches">
             <h3>Your selection from next weeks matches:</h3>
-            <ul >
+            <ul>
                 {{#each model.nextMatchWeek.matchDays}}
                 <li>
                     {{formatDate day}}
                     <ul id="match-list">
 
-                    {{#each matches}}
+                        {{#each matches}}
                         <li>
-                    {{view Em.RadioButton titleBinding="homeTeam.name" optionBinding="homeTeam.name" group="matches" valueBinding="App.game.userPick"}} -
-                    {{view Em.RadioButton titleBinding="awayTeam.name" optionBinding="awayTeam.name" group="matches" valueBinding="App.game.userPick"}}
-                            </li>
-                    {{/each}}
-                        </ul>
+                            {{view Em.RadioButton titleBinding="homeTeam.name" optionBinding="homeTeam.name"
+                            group="matches" valueBinding="App.game.userPick"}} -
+                            {{view Em.RadioButton titleBinding="awayTeam.name" optionBinding="awayTeam.name"
+                            group="matches" valueBinding="App.game.userPick"}}
+                        </li>
+                        {{/each}}
+                    </ul>
                 </li>
                 {{/each}}
             </ul>
         </div>
         <div id="your-picks">
-            <h3>Your previous picks:</h3>
-            {{#each model.game.rounds}}
-                {{matchWeek}}
-                {{#each userPicks}}
+            <h3>Your picks:</h3>
+            <ul>
+                {{#each model.game.rounds}}
                 <li>
-                    {{team}} - {{correct}}
+                    In week {{matchWeek}} you picked {{#each userPicks}}{{team}} and they
+                    {{#if correct}}
+                        won
+                    {{else}}
+                        lost
+                    {{/if}}
+                    {{/each}}
                 </li>
                 {{/each}}
-            {{/each}}
+
+            </ul>
         </div>
 
     </div>

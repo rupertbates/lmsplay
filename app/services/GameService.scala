@@ -62,13 +62,13 @@ object GameService {
     GameRepository.findOneById(id).map(checkPicks(_))
   }
 
-  def getPlayersStillIn(id: String): Option[List[String]] = {
-    val game = GameRepository.findOneById(id).getOrElse(return None)
-
-    val gameWeeks = MatchService.getMatchWeeks(game.started, MatchService.getCurrentMatchWeekNumber.getOrElse(0))
-
-    None
-  }
+//  def getPlayersStillIn(id: String): Option[List[String]] = {
+//    val game = GameRepository.findOneById(id).getOrElse(return None)
+//
+//    val gameWeeks = MatchService.getMatchWeeks(game.started, MatchService.getCurrentMatchWeekNumber.getOrElse(0))
+//
+//    None
+//  }
 
   //  def setGameState(f : Unit => Option[Game]){
   //    f() match{
@@ -96,9 +96,17 @@ object GameService {
   }
 
   def pickTeam(id: String, matchWeek: Int, username: String, team: String): Boolean = {
-    if (matchWeek <= MatchService.getCurrentMatchWeekNumber.getOrElse(0)) return false
+    if (matchWeek <= MatchService.getCurrentMatchWeekNumber.getOrElse(0))
+      return false
+
     val game = getGameContainingUser(id, username).getOrElse(return false)
-    val round = game.getGameRound(matchWeek)
+
+    val round = game.getGameRound(matchWeek).getOrElse({
+      val r = new GameRound(matchWeek, List[UserPick]())
+      game.gameRounds = r::game.gameRounds
+      r
+    })
+
     round.userPicks = new UserPick(username, team) :: round.userPicks
     GameRepository.save(game)
     true

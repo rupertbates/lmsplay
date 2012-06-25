@@ -21,23 +21,27 @@ case class Game(@Key("_id") id : String,
   val COMPLETE = 2
 
   def getUserPick(matchWeek : Option[MatchWeek], username : String) = {
-    matchWeek.map(mw => getGameRound(mw.number).userPicks.find(p => p.username == username).getOrElse(new UserPick("", "")).team)
+    matchWeek
+      .flatMap(mw => getGameRound(mw.number))
+      .flatMap(gr => gr.userPicks.find(p => p.username == username))
+      .map(_.team)
   }
   def getUserPicks(matchWeek : Option[MatchWeek]) = {
-    matchWeek.map(mw => getGameRound(mw.number).userPicks)
+    matchWeek.flatMap(mw => getGameRound(mw.number))
+      .map(_.userPicks)
   }
   def getUserRounds(username : String) = {
     gameRounds.map(r => new GameRound(r.matchWeek, r.userPicks.filter(p => p.username == username)))
   }
   def getGameRound(matchWeek : Int) = {
-    val round = gameRounds.find(g => g.matchWeek == matchWeek)
-    round match{
-      case Some(r) => r
-      case None =>
-        val r = new GameRound(matchWeek, List[UserPick]())
-        gameRounds = r::gameRounds
-        r
-    }
+    gameRounds.find(g => g.matchWeek == matchWeek)
+//    round match{
+//      case Some(r) => r
+//      case None =>
+//        val r = new GameRound(matchWeek, List[UserPick]())
+//        gameRounds = r::gameRounds
+//        r
+//    }
   }
 }
 
