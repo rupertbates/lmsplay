@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f84dcf78-57b1-4ea9-be03-a4d8994745ad" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/GameState.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/TestMongo.scala" />
-      <change type="DELETED" beforePath="D:\Projects\lmsplay\app\helpers\MatchWeekHelper.scala" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/ImportMatches.scala" afterPath="$PROJECT_DIR$/app/admin/ImportMatches.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/GameController.scala" afterPath="$PROJECT_DIR$/app/controllers/GameController.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/MatchController.scala" afterPath="$PROJECT_DIR$/app/controllers/MatchController.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Game.scala" afterPath="$PROJECT_DIR$/app/models/Game.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Match.scala" afterPath="$PROJECT_DIR$/app/models/Match.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/MatchWeek.scala" afterPath="$PROJECT_DIR$/app/models/MatchWeek.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/UserPick.scala" afterPath="$PROJECT_DIR$/app/models/UserPick.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/GameService.scala" afterPath="$PROJECT_DIR$/app/services/GameService.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/MatchService.scala" afterPath="$PROJECT_DIR$/app/services/MatchService.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/viewmodels/UserGameModel.scala" afterPath="$PROJECT_DIR$/app/viewmodels/UserGameModel.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/viewmodels/ViewGameModel.scala" afterPath="$PROJECT_DIR$/app/viewmodels/ViewGameModel.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/gameEmber.scala.html" afterPath="$PROJECT_DIR$/app/views/gameEmber.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/games.scala.html" afterPath="$PROJECT_DIR$/app/views/games.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/ember/lms-view-game.js" afterPath="$PROJECT_DIR$/public/javascripts/ember/lms-view-game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/lms-edit-games.js" afterPath="$PROJECT_DIR$/public/javascripts/lms-edit-games.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/TestSerialization/SerializeModel.scala" afterPath="$PROJECT_DIR$/test/TestSerialization/SerializeModel.scala" />
     </list>
     <ignored path="lmsplay.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -281,7 +262,7 @@
       <file leaf-file-name="gameEmber.scala.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/gameEmber.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="55" selection-start="1826" selection-end="1826" vertical-scroll-proportion="0.9790875">
+            <state line="55" column="17" selection-start="1770" selection-end="1923" vertical-scroll-proportion="0.8174905">
               <folding />
             </state>
           </provider>
@@ -1164,7 +1145,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sort out MatchWeeks so they are FULLY contiguous" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some stuff" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1186,6 +1167,7 @@
     <MESSAGE value="group matches by day" />
     <MESSAGE value="Sort out MatchWeeks so they are contiguous" />
     <MESSAGE value="Sort out MatchWeeks so they are FULLY contiguous" />
+    <MESSAGE value="Some stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1298,13 +1280,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/GameRound.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="11" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/viewmodels/UserGameModel.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="119" selection-start="440" selection-end="440" vertical-scroll-proportion="0.0">
@@ -1321,9 +1296,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/GameRound.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="11" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/gameEmber.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="55" selection-start="1826" selection-end="1826" vertical-scroll-proportion="0.9790875">
+        <state line="55" column="17" selection-start="1770" selection-end="1923" vertical-scroll-proportion="0.8174905">
           <folding />
         </state>
       </provider>

@@ -48,9 +48,12 @@
         <div id="your-picks">
             <h3>Your previous picks:</h3>
             {{#each model.game.rounds}}
-            <li>
-                {{userPicks[0].team}} - {{userPicks[0].correct}}
-            </li>
+                {{matchWeek}}
+                {{#each userPicks}}
+                <li>
+                    {{team}} - {{correct}}
+                </li>
+                {{/each}}
             {{/each}}
         </div>
 
