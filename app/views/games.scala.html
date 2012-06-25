@@ -40,12 +40,13 @@
         <ul id="player-list">
         </ul>
 
-        <% if(started){
-            print("game started " + started.toString('dddd, MMMM d'))
+        <% if(started != 0){
+            print("game started in round" + started)
         }else{%><a class="start"></a><%}%>
         <input class="add-player" type="text" value="" />
         <% if(!started){%><a class="add-player">Add a player</a><%}%>
         <a class="destroy-game"></a>
+        <% if(id){%><a href="/games/view/<%= id %> ">View game</a><%}%>
     </div>
 </script>
 

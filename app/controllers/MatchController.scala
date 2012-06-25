@@ -19,8 +19,8 @@ object MatchController extends Controller {
       //matches.foreach(m => MatchRepository.save(m))
       Ok(Json.generate(matches))
   }
-  def listWeeksMatches(MatchWeek : Int) = Action{
-    val matchWeek = MatchService.getMatchWeek
+  def listWeeksMatches(weekNumber : Int) = Action{
+    val matchWeek = MatchService.getMatchWeek(weekNumber)
     Ok(Json.generate(matchWeek))
   }
 }

@@ -2,11 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f84dcf78-57b1-4ea9-be03-a4d8994745ad" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/GameState.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/TestMongo.scala" />
+      <change type="DELETED" beforePath="D:\Projects\lmsplay\app\helpers\MatchWeekHelper.scala" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Global.scala" afterPath="$PROJECT_DIR$/app/Global.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/ImportMatches.scala" afterPath="$PROJECT_DIR$/app/admin/ImportMatches.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/GameController.scala" afterPath="$PROJECT_DIR$/app/controllers/GameController.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/MatchController.scala" afterPath="$PROJECT_DIR$/app/controllers/MatchController.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Game.scala" afterPath="$PROJECT_DIR$/app/models/Game.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Match.scala" afterPath="$PROJECT_DIR$/app/models/Match.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/MatchWeek.scala" afterPath="$PROJECT_DIR$/app/models/MatchWeek.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/UserPick.scala" afterPath="$PROJECT_DIR$/app/models/UserPick.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/GameService.scala" afterPath="$PROJECT_DIR$/app/services/GameService.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/MatchService.scala" afterPath="$PROJECT_DIR$/app/services/MatchService.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/viewmodels/UserGameModel.scala" afterPath="$PROJECT_DIR$/app/viewmodels/UserGameModel.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/viewmodels/ViewGameModel.scala" afterPath="$PROJECT_DIR$/app/viewmodels/ViewGameModel.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/gameEmber.scala.html" afterPath="$PROJECT_DIR$/app/views/gameEmber.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/games.scala.html" afterPath="$PROJECT_DIR$/app/views/games.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/ember/lms-view-game.js" afterPath="$PROJECT_DIR$/public/javascripts/ember/lms-view-game.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/lms-edit-games.js" afterPath="$PROJECT_DIR$/public/javascripts/lms-edit-games.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/TestSerialization/SerializeModel.scala" afterPath="$PROJECT_DIR$/test/TestSerialization/SerializeModel.scala" />
     </list>
     <ignored path="lmsplay.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -103,6 +119,84 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/app/controllers/GameController.scala" line="71" class="controllers.GameController.JsonRoutes$" package="controllers">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/app/services/GameService.scala" line="120" class="services.GameService.GameRepository$" package="services">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/test/TestSerialization/SerializeModel.scala" line="11" class="TestSerialization.SerializeModel" package="TestSerialization">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/app/admin/ImportMatches.scala" line="2" class="ImportMatches.scala" package="">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/app/controllers/GameController.scala" line="22" class="controllers.GameController.HtmlRoutes$" package="controllers">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/app/services/GameService.scala" line="55" class="services.GameService$" package="services">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
@@ -144,97 +238,97 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ImportMatches.scala" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/admin/ImportMatches.scala">
+      <file leaf-file-name="GameController.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/GameController.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="4" selection-start="1326" selection-end="1326" vertical-scroll-proportion="0.24456522">
+            <state line="27" column="33" selection-start="961" selection-end="961" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#15#62#0" expanded="true" />
+                <element signature="e#21#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatchService.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/services/MatchService.scala">
+      <file leaf-file-name="ViewGameModel.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/viewmodels/ViewGameModel.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="75" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0">
+            <state line="6" column="41" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Game.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="6" selection-start="875" selection-end="875" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#18#76#0" expanded="true" />
+                <element signature="e#17#47#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Global.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Global.scala">
+      <file leaf-file-name="GameRound.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/GameRound.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="28" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0">
+            <state line="2" column="11" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SalatDAO.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.ivy2/cache/com.novus/salat-core_2.9.1/srcs/salat-core_2.9.1-0.0.8-SNAPSHOT-sources.jar!/com/novus/salat/dao/SalatDAO.scala">
+      <file leaf-file-name="gameEmber.scala.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/gameEmber.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="377" column="21" selection-start="15160" selection-end="15162" vertical-scroll-proportion="0.0">
+            <state line="51" column="55" selection-start="1826" selection-end="1826" vertical-scroll-proportion="0.9790875">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="matches.scala.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/matches.scala.html">
+      <file leaf-file-name="UserGameModel.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/viewmodels/UserGameModel.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="115" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
+            <state line="10" column="119" selection-start="440" selection-end="440" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatchController.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/MatchController.scala">
+      <file leaf-file-name="GameService.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/services/GameService.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="34" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApplicationController.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/ApplicationController.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="7" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MatchWeekHelper.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/helpers/MatchWeekHelper.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="6" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MatchWeekRepository.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/repositories/MatchWeekRepository.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="7" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0">
+            <state line="58" column="5" selection-start="2015" selection-end="2015" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#22#57#0" expanded="true" />
+                <element signature="e#18#47#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/routes">
+      <file leaf-file-name="UserPick.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/UserPick.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="2" column="20" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatchDay.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/MatchDay.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="58" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatchWeek.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/MatchWeek.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="45" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -256,22 +350,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/MatchWeek.scala" />
-        <option value="$PROJECT_DIR$/app/ImportMatches.scala" />
-        <option value="$PROJECT_DIR$/conf/routes" />
-        <option value="$PROJECT_DIR$/app/controllers/ApplicationController.scala" />
-        <option value="$PROJECT_DIR$/app/models/Game.scala" />
-        <option value="$PROJECT_DIR$/app/services/GameService.scala" />
-        <option value="$PROJECT_DIR$/app/viewmodels/ViewGameModel.scala" />
-        <option value="$PROJECT_DIR$/public/javascripts/ember/lms-view-game.js" />
-        <option value="$PROJECT_DIR$/target/scala-2.9.1/src_managed/main/views/html/matches.template.scala" />
-        <option value="$PROJECT_DIR$/test/TestDates.scala" />
-        <option value="$PROJECT_DIR$/logs/application.log" />
-        <option value="$PROJECT_DIR$/app/views/matches.scala.html" />
         <option value="$PROJECT_DIR$/app/controllers/MatchController.scala" />
-        <option value="$PROJECT_DIR$/app/Global.scala" />
-        <option value="$PROJECT_DIR$/app/services/MatchService.scala" />
+        <option value="$PROJECT_DIR$/conf/routes" />
+        <option value="$PROJECT_DIR$/public/javascripts/lms-edit-games.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/ember/lms-view-game.js" />
+        <option value="$PROJECT_DIR$/app/viewmodels/ViewGameModel.scala" />
+        <option value="$PROJECT_DIR$/app/models/Match.scala" />
+        <option value="$PROJECT_DIR$/app/models/MatchWeek.scala" />
         <option value="$PROJECT_DIR$/app/admin/ImportMatches.scala" />
+        <option value="$PROJECT_DIR$/app/controllers/GameController.scala" />
+        <option value="$PROJECT_DIR$/app/views/games.scala.html" />
+        <option value="$PROJECT_DIR$/app/services/MatchService.scala" />
+        <option value="$PROJECT_DIR$/app/services/GameService.scala" />
+        <option value="$PROJECT_DIR$/app/models/UserPick.scala" />
+        <option value="$PROJECT_DIR$/app/viewmodels/UserGameModel.scala" />
+        <option value="$PROJECT_DIR$/app/models/Game.scala" />
+        <option value="$PROJECT_DIR$/app/views/gameEmber.scala.html" />
       </list>
     </option>
   </component>
@@ -307,12 +401,12 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
+      <pane id="PackagesPane">
+        <subPane>
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lmsplay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -571,28 +665,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Game.scala" />
-              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lmsplay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lmsplay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="helpers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -635,12 +707,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lmsplay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -652,6 +724,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="247" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="264" />
     <property name="project.structure.proportion" value="0.0" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="260" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="MemberChooser.sorted" value="false" />
@@ -661,21 +734,25 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1064" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1060" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="262" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="260" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/controllers" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="options.lastSelected" value="preferences.externalResources" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="DefaultHtmlFileTemplate" value="Html" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
@@ -689,32 +766,15 @@
       <recent name="D:\Projects\lmsplay\app\helpers" />
       <recent name="D:\Projects\lmsplay\Tests\files" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\lmsplay\conf" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="controllers" />
       <recent name="services" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Projects\lmsplay\conf" />
-    </key>
   </component>
   <component name="RunManager" selected="Remote.Debug web app">
-    <configuration default="false" name="parseJson.scala" type="ScalaScriptRunConfiguration" factoryName="Scala Script" temporary="true">
-      <module name="Tests" />
-      <setting name="path" value="$PROJECT_DIR$/Tests/src/parseJson.scala" />
-      <setting name="vmparams" value="" />
-      <setting name="consoleargs" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="false" name="FacebookSpec::be able to retrieve an access token" type="Specs2RunConfiguration" factoryName="Specs2" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <extension name="scalaCoverage" />
@@ -728,7 +788,6 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="false" />
-      <setting name="useOlderScalaTestVersion" value="false" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="" />
         <option name="TRANSPORT" value="0" />
@@ -755,7 +814,6 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="false" />
-      <setting name="useOlderScalaTestVersion" value="false" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="" />
         <option name="TRANSPORT" value="0" />
@@ -777,7 +835,6 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="false" />
-      <setting name="useOlderScalaTestVersion" value="false" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="" />
         <option name="TRANSPORT" value="0" />
@@ -801,7 +858,6 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="false" />
-      <setting name="useOlderScalaTestVersion" value="false" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="" />
         <option name="TRANSPORT" value="0" />
@@ -814,6 +870,29 @@
         <option name="Make" enabled="false" />
         <option name="SBT.BeforeRunTask" enabled="true" action="test-compile" runInCurrentModule="false" />
       </method>
+    </configuration>
+    <configuration default="false" name="TestMongo" type="Specs2RunConfiguration" factoryName="Specs2" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <extension name="scalaCoverage" />
+      <module name="lmsplay" />
+      <setting name="path" value="TestMongo" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
     </configuration>
     <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -828,7 +907,6 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="false" />
-      <setting name="useOlderScalaTestVersion" value="false" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -961,7 +1039,6 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="false" />
-      <setting name="useOlderScalaTestVersion" value="false" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -1002,11 +1079,11 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Remote.Debug web app" />
-      <item index="1" class="java.lang.String" itemvalue="Scala Script.parseJson.scala" />
-      <item index="2" class="java.lang.String" itemvalue="Specs2.FacebookSpec::be able to retrieve an access token" />
-      <item index="3" class="java.lang.String" itemvalue="Specs2.FacebookSpec" />
-      <item index="4" class="java.lang.String" itemvalue="Specs2.SerializeModel" />
-      <item index="5" class="java.lang.String" itemvalue="Specs2.TestDates" />
+      <item index="1" class="java.lang.String" itemvalue="Specs2.FacebookSpec::be able to retrieve an access token" />
+      <item index="2" class="java.lang.String" itemvalue="Specs2.FacebookSpec" />
+      <item index="3" class="java.lang.String" itemvalue="Specs2.SerializeModel" />
+      <item index="4" class="java.lang.String" itemvalue="Specs2.TestDates" />
+      <item index="5" class="java.lang.String" itemvalue="Specs2.TestMongo" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -1029,6 +1106,7 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924107" sideWeight="0.49522293" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.48985043" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.32478634" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3783482" sideWeight="0.74893165" order="3" side_tool="false" content_ui="tabs" />
@@ -1039,12 +1117,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19764957" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19711539" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.713141" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32959402" sideWeight="0.60379463" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="439" height="137" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.48985043" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1087,7 +1164,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sort out MatchWeeks so they are contiguous" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sort out MatchWeeks so they are FULLY contiguous" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1108,17 +1185,18 @@
     <MESSAGE value="Add js libraries" />
     <MESSAGE value="group matches by day" />
     <MESSAGE value="Sort out MatchWeeks so they are contiguous" />
+    <MESSAGE value="Sort out MatchWeeks so they are FULLY contiguous" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/javascripts/lms-edit-games.js</url>
-          <line>147</line>
+          <line>148</line>
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/javascripts/lms-edit-games.js</url>
-          <line>155</line>
+          <line>156</line>
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1128,111 +1206,125 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/repositories/UserRepository.scala">
+    <entry file="file://$PROJECT_DIR$/app/models/Team.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="7" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Game.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="48" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/User.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="11" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/MatchDay.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="11" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/TestDates.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="25" selection-start="1060" selection-end="1060" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/matches.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="115" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
+        <state line="4" column="11" selection-start="67" selection-end="67" vertical-scroll-proportion="0.12830189">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/matches.json">
+    <entry file="file://$PROJECT_DIR$/app/models/Match.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1444" column="54" selection-start="79225" selection-end="79225" vertical-scroll-proportion="0.37366548">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/ApplicationController.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="7" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/repositories/MatchWeekRepository.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="7" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#22#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Global.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="28" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/com.novus/salat-core_2.9.1/srcs/salat-core_2.9.1-0.0.8-SNAPSHOT-sources.jar!/com/novus/salat/dao/SalatDAO.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="377" column="21" selection-start="15160" selection-end="15162" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/MatchController.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="34" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/routes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/MatchService.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="75" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#18#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/MatchWeekHelper.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="6" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0">
+        <state line="8" column="8" selection-start="292" selection-end="292" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/admin/ImportMatches.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="4" selection-start="1326" selection-end="1326" vertical-scroll-proportion="0.24456522">
+        <state line="25" column="44" selection-start="907" selection-end="907" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#15#62#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Global.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="7" selection-start="166" selection-end="166" vertical-scroll-proportion="-1.36">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/games.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="26" selection-start="972" selection-end="972" vertical-scroll-proportion="-13.730769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/MatchService.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="32" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#18#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/GameService.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="5" selection-start="2015" selection-end="2015" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#18#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/MatchWeek.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="45" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/MatchDay.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="58" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/UserPick.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="20" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/GameController.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="33" selection-start="961" selection-end="961" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#21#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/viewmodels/ViewGameModel.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="41" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/GameRound.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="11" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/viewmodels/UserGameModel.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="119" selection-start="440" selection-end="440" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Game.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="6" selection-start="875" selection-end="875" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#17#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/gameEmber.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="55" selection-start="1826" selection-end="1826" vertical-scroll-proportion="0.9790875">
+          <folding />
         </state>
       </provider>
     </entry>

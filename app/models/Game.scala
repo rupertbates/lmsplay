@@ -8,26 +8,26 @@ import org.joda.time.DateTime
 import org.bson.types.ObjectId
 import collection.mutable.ListBuffer
 
-//import scala.collection.mutable.Map
-import collection.mutable
-import helpers.MatchWeekHelper._
-object GameState extends Enumeration {
-  type GameState = Value
-  val New, Started, Complete = Value
-}
 case class Game(@Key("_id") id : String,
                 name : String,
                 created : DateTime = new DateTime(),
                 creator : String,
                 players : List[String],
-                started : Option[DateTime],
+                var started : Int,
                 var gameRounds : List[GameRound])
 {
-  def getUserPick(MatchWeek : Int, username : String) = {
-    getGameRound(MatchWeek).userPicks.find(p => p.username == username).getOrElse(new UserPick("", "")).team
+  val NEW = 0
+  val STARTED = 1
+  val COMPLETE = 2
+
+  def getUserPick(matchWeek : Option[MatchWeek], username : String) = {
+    matchWeek.map(mw => getGameRound(mw.number).userPicks.find(p => p.username == username).getOrElse(new UserPick("", "")).team)
   }
-  def getUserPicks(username : String) = {
-    gameRounds.flatten(r => r.userPicks.filter(p => p.username == username))
+  def getUserPicks(matchWeek : Option[MatchWeek]) = {
+    matchWeek.map(mw => getGameRound(mw.number).userPicks)
+  }
+  def getUserRounds(username : String) = {
+    gameRounds.map(r => new GameRound(r.matchWeek, r.userPicks.filter(p => p.username == username)))
   }
   def getGameRound(matchWeek : Int) = {
     val round = gameRounds.find(g => g.matchWeek == matchWeek)
@@ -39,11 +39,5 @@ case class Game(@Key("_id") id : String,
         r
     }
   }
-//  def getState = {
-//    if(started.isEmpty)
-//      GameState.New
-//    else if
-//      playersIn.
-//  }
 }
 

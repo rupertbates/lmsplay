@@ -20,6 +20,7 @@ GET     /logout                             controllers.ApplicationController.lo
 GET     /games      controllers.GameController.HtmlRoutes.index
 GET     /games/new  controllers.GameController.HtmlRoutes.newGame
 GET     /games/view/:id controllers.GameController.HtmlRoutes.viewGame(id: String)
+
 #ajax routes
 GET     /games/list controllers.GameController.JsonRoutes.listGames
 POST    /games      controllers.GameController.JsonRoutes.createGame
@@ -27,6 +28,7 @@ GET     /games/:id  controllers.GameController.JsonRoutes.getGame(id : String)
 PUT     /games/:id  controllers.GameController.JsonRoutes.updateGame(id : String)
 DELETE  /games/:id  controllers.GameController.JsonRoutes.deleteGame(id : String)
 GET     /pick-team/:id/:week/:team  controllers.GameController.JsonRoutes.pickTeam(id : String, week : Int, team : String)
+GET     /games/start/:id    controllers.GameController.JsonRoutes.startGame(id: String)
 
 #matches
 GET     /matches            controllers.MatchController.matches

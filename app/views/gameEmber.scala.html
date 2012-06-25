@@ -16,6 +16,10 @@
     <div class="view">
         <h2>{{model.game.name}}</h2>
 
+
+        This game started in week {{model.game.started}}<br />
+        The current match week is week {{model.thisMatchWeek.number}}
+
         <h3>Players:</h3>
         <ul id="player-list">
             {{#each model.game.players}}
@@ -23,9 +27,9 @@
             {{/each}}
         </ul>
         <div id="matches">
-            <h3>Matches:</h3>
+            <h3>Your selection from next weeks matches:</h3>
             <ul >
-                {{#each model.nextWeeksMatches}}
+                {{#each model.nextMatchWeek.matchDays}}
                 <li>
                     {{formatDate day}}
                     <ul id="match-list">
@@ -43,9 +47,9 @@
         </div>
         <div id="your-picks">
             <h3>Your previous picks:</h3>
-            {{#each model.game.picks}}
+            {{#each model.game.rounds}}
             <li>
-                {{team}}
+                {{userPicks[0].team}} - {{userPicks[0].correct}}
             </li>
             {{/each}}
         </div>

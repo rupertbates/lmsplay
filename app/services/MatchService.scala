@@ -1,54 +1,42 @@
 package services
 
 import repositories.{MatchWeekRepository, MatchRepository}
-import org.joda.time.{DateTimeConstants, DateTime}
+import org.joda.time.{Interval, DateTimeConstants, DateTime}
 import com.mongodb.casbah.commons.MongoDBObject
-import helpers.MatchWeekHelper.getCurrentMatchWeek
 import models.{MatchWeek, Match, MatchDay}
 import com.mongodb.casbah.Imports._
-import helpers.MatchWeekHelper
 
 object MatchService {
-
   implicit def dateTimeOrdering: Ordering[DateTime] = Ordering.fromLessThan(_ isBefore _)
+  val dateOffsetMonths = 10
+  val startDate = new DateTime(2011, 8, 13, 0, 0)
+  def now = new DateTime().minusMonths(dateOffsetMonths).plusWeeks(4)
 
-  def groupMatchesByDay(matches: List[Match]) = {
-    matches
-      .groupBy(m => new DateTime(m.kickOffTime.toDateMidnight))
-      .map(args => new MatchDay(args._1, args._2))
-      .toList
-      .sortBy(m => m.day)
-  }
-
-  def getMatches(matchWeek: Int) = {
-    if (matchWeek == 0) MatchRepository.find(null).toList
-    else MatchRepository.find(MongoDBObject("matchWeek" -> matchWeek)).toList
-  }
-  def getMatchWeek = {
-    val q = ("startDate" $lte MatchWeekHelper.now) ++ ("endDate" $gte MatchWeekHelper.now)
+  def getMatchWeek(date : DateTime) = {
+    val q = ("startDate" $lte date) ++ ("endDate" $gte date)
     MatchWeekRepository.findOne(q)
   }
 
-  def getMatchDays(matchWeek: Int = 0) =
-    groupMatchesByDay(getMatches(matchWeek))
+  def getMatchWeek(matchWeek: Int) = {
+    //if (matchWeek == 0) MatchWeekRepository.find(null).toList
+    MatchWeekRepository.findOne(MongoDBObject("number" -> matchWeek))
+  }
 
-  def getThisWeeksMatches = getMatches(getCurrentMatchWeek)
+  def getCurrentMatchWeek = {
+    getMatchWeek(now)
+  }
 
-  def getNextWeeksMatches = getMatches(getCurrentMatchWeek + 1)
+  def getCurrentMatchWeekNumber = {
+    getCurrentMatchWeek.map(_.number)
+  }
+  def getNextMatchWeek = getMatchWeek(now.plusWeeks(1))
 
-  def getThisWeeksMatchesByDay = getMatchDays(getCurrentMatchWeek)
-
-  def getNextWeeksMatchesByDay = getMatchDays(getCurrentMatchWeek + 1)
-
+  def getMatchWeeks(first : Int, last : Int) = {
+    val q = ("number" $gte first $lte last)
+    MatchWeekRepository.find(q).toList.sortBy(_.number)
+  }
   def getMatchWeeks = {
-//    getMatches(0)
-//      .groupBy(m => m.matchWeek)
-//      .map(args => new MatchWeek(args._1, args._2(0).kickOffTime, args._2(0).kickOffTime, groupMatchesByDay(args._2)))
-//      .toList
-//      .sortBy(_.number)
-
     MatchWeekRepository.find(null).toList.sortBy(_.number)
-
   }
 
 }

@@ -1,7 +1,6 @@
 package admin
 
 import com.mongodb.casbah.commons.MongoDBObject
-import helpers.MatchWeekHelper
 import models.{MatchDay, MatchWeek, Team, Match}
 import org.joda.time.{Interval, DateTime}
 import repositories.{MatchWeekRepository, MatchRepository}
@@ -12,9 +11,7 @@ import collection.parallel.mutable
 import collection.mutable.ListBuffer
 
 object ImportMatches {
-
-
-
+  implicit def dateTimeOrdering: Ordering[DateTime] = Ordering.fromLessThan(_ isBefore _)
 //  def getMatchWeeks = {
 //    MatchRepository.find(null)
 //      .toList
@@ -26,6 +23,7 @@ object ImportMatches {
 
   def importMatches() {
     loadGames().foreach(MatchWeekRepository.save(_))
+    //db.posts.ensureIndex({created_on: 1});
   }
 
   def saveMongo(game: Match) {
@@ -45,7 +43,7 @@ object ImportMatches {
     val months = node.get("months")
     var matchBuffer = new ListBuffer[Match]
     var i = 0
-    var startDate = MatchWeekHelper.startDate
+    var startDate = MatchService.startDate
     var weekNum = 1
 
     while (i < months.size()) {
@@ -81,7 +79,7 @@ object ImportMatches {
 
     val matchWeeks = matches
       .groupBy(m => m.matchWeek)
-      .map(args => new MatchWeek(args._1, args._2(0).kickOffTime, args._2(0).kickOffTime, MatchService.groupMatchesByDay(args._2)))
+      .map(args => new MatchWeek(args._1, args._2(0).kickOffTime, args._2(0).kickOffTime, groupMatchesByDay(args._2)))
       .toList
       .sortBy(_.number)
 
@@ -92,6 +90,15 @@ object ImportMatches {
       last = mw
     })
     matchWeeks
+  }
+
+
+  def groupMatchesByDay(matches: List[Match]) = {
+    matches
+      .groupBy(m => new DateTime(m.kickOffTime.toDateMidnight))
+      .map(args => new MatchDay(args._1, args._2))
+      .toList
+      .sortBy(m => m.day)
   }
 
 

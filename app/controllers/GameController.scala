@@ -7,24 +7,25 @@ import play.api.mvc.Controller
 import com.codahale.jerkson.Json
 import services.{MatchService, GameService}
 import viewmodels.{UserGameModel, ViewGameModel}
-import helpers.MatchWeekHelper.getNextMatchWeek
 import play.api.Logger
-import helpers.MatchWeekHelper
+
 
 object GameController extends Controller with Secured {
 
   object HtmlRoutes {
     def viewGame(id: String) = IsAuthenticated {
       username => _ =>
-        Logger.debug("Now = " + MatchWeekHelper.now)
+        Logger.debug("Now = " + MatchService.now + " Match week = " + MatchService.getCurrentMatchWeekNumber.getOrElse(0))
         val game = GameService.getGameContainingUser(id, username)
         game match {
           case None => NotFound
           case Some(g) => {
-            val nextWeeksMatches = MatchService.getNextWeeksMatchesByDay
-            val thisWeeksMatches = MatchService.getThisWeeksMatches
-            val userPick = g.getUserPick(getNextMatchWeek, username)
-            val model = new ViewGameModel(new UserGameModel(g, username), getNextMatchWeek, nextWeeksMatches, userPick)
+            GameService.checkPicks(g)
+            val nextMatchWeek = MatchService.getNextMatchWeek
+            val thisMatchWeek = MatchService.getCurrentMatchWeek
+
+            val userPick = g.getUserPick(nextMatchWeek, username)
+            val model = new ViewGameModel(new UserGameModel(g, username), thisMatchWeek, nextMatchWeek, userPick)
             Ok(views.html.gameEmber(Json.generate(model)))
           }
         }
@@ -75,16 +76,28 @@ object GameController extends Controller with Secured {
         }
     }
 
-    def pickTeam(id: String, MatchWeek: Int, team: String) = IsAuthenticated {
+    def pickTeam(id: String, matchWeek: Int, team: String) = IsAuthenticated {
       username =>
         implicit request => {
 
-          if (GameService.pickTeam(id, MatchWeek, username, team)) {
+          if (GameService.pickTeam(id, matchWeek, username, team)) {
             Ok("Game updated successfully")
           }else{
-            if(MatchWeekHelper.matchesHaveStarted(MatchWeek))
+            if(matchWeek <= MatchService.getCurrentMatchWeekNumber.getOrElse(0))
               BadRequest("Couldn't update the game, matches have already started")
             else
+              BadRequest("Couldn't update the game")
+          }
+        }
+    }
+
+    def startGame(id: String) = IsAuthenticated {
+      username =>
+        implicit request => {
+
+          if (GameService.startGame(id, username)) {
+            Ok("Game updated successfully")
+          }else{
               BadRequest("Couldn't update the game")
           }
         }

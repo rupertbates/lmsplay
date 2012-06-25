@@ -8,15 +8,13 @@
 window.App = Ember.Application.create();
 
 Game = Ember.Object.extend({
-//    thisWeeksSelection: function() {
-//       return "Liverpool";
-//    }.property('gameRounds')
+
     userPickChanged: function() {
         //alert(this.game.id);
         var jsonData = JSON.stringify(this.get("game"));
         $.ajax({
             type: 'GET',
-            url: '/pick-team/' + this.game.id + "/" + this.matchWeek + "/" + this.userPick
+            url: '/pick-team/' + this.game.id + "/" + this.nextMatchWeek.number + "/" + this.userPick
         });
     }.observes('userPick'),
     bind: function(to, from){
@@ -58,6 +56,10 @@ Ember.RadioButton = Ember.View.extend({
 
 Handlebars.registerHelper('formatDate', function(property) {
     return new Date(Ember.getPath(this, property)).toString('dddd, MMMM d');
+});
+
+Handlebars.registerHelper('gameStarted', function(model) {
+    return model.game.started > model.thisMatchWeek.number;
 });
 
 view.appendTo("#game");

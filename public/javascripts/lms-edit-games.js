@@ -50,8 +50,12 @@ $(function () {
             }
         },
         start:function () {
-            if (this.get("started") == undefined) {
-                this.save({"started":new Date()});
+            if (this.get("started") == 0) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/games/start/' + this.get("id")
+                });
+                //this.save({"started":new Date()});
             }
         },
         // Remove this Game from the server and delete its view.
@@ -66,14 +70,14 @@ $(function () {
         removePlayer:function(value){
             var players = _.reject(this.get("players"), function(player){return player == value;});
             this.save({"players" : players});
-        },
-        //Make sure that started is a date type
-        set: function(attributes, options) {
-            if (attributes.started !== undefined) {
-                attributes.started = new Date(attributes.started);
-            }
-            return Backbone.Model.prototype.set.call(this, attributes, options);
         }
+        //Make sure that started is a date type
+//        set: function(attributes, options) {
+//            if (attributes.started !== undefined) {
+//                attributes.started = new Date(attributes.started);
+//            }
+//            return Backbone.Model.prototype.set.call(this, attributes, options);
+//        }
     });
     // Game Collection
     // ---------------
